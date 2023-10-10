@@ -2,7 +2,8 @@
 
 // base URL for API
 
-const baseURL = "http://localhost:8081/api";
+// const baseURL = "http://localhost:8081/api";
+const baseURL = "https://amuse-pq87.onrender.com/api"
 
 // USERS QUERIES
 
