@@ -1,13 +1,11 @@
 import React from "react";
 import "../Museums/AllMuseums.css";
-import museumLogo from "../Images/logo.png";
+// import museumLogo from "../Images/logo.png";
 
 function Spinner() {
   return (
     <>
-      <div className="loader">
-        <img src={museumLogo} />
-      </div>
+      <div className="loader">{/* <img src={museumLogo} /> */}</div>
     </>
   );
 }

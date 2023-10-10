@@ -5,10 +5,15 @@ import {
   fetchAllMuseums,
   fetchReviewsByMuseumId,
 } from "../../helpers/fetching";
-import markersIcon from "../Images/markers.png";
+// import markersIcon from "../Images/markers.png";
 import AverageRating from "../Reviews/AverageRating";
 
-const MapMarkers = ({ searchParam, selectedTypes, selectedMarker, setSelectedMarker }) => {
+const MapMarkers = ({
+  searchParam,
+  selectedTypes,
+  selectedMarker,
+  setSelectedMarker,
+}) => {
   const navigate = useNavigate();
   const [museums, setMuseums] = useState([]);
   const [error, setError] = useState(null);
@@ -63,7 +68,7 @@ const MapMarkers = ({ searchParam, selectedTypes, selectedMarker, setSelectedMar
             lng: parseFloat(museum.lng),
           }}
           icon={{
-            url: markersIcon,
+            url: "/Images/markers.png",
             scaledSize: new window.google.maps.Size(40, 40),
           }}
           onClick={() => {

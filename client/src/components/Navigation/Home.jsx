@@ -1,12 +1,12 @@
 import React from "react";
-import homeVideo from "../Images/homepage.mp4";
+// import homeVideo from "../Images/homepage.mp4";
 
 export default function Home() {
   return (
     <div className="home">
       <div className="video-background">
         <video autoPlay loop muted>
-          <source src={homeVideo} type="video/mp4" />
+          <source src="/Images/homepage.mp4" type="video/mp4" />
         </video>
       </div>
 

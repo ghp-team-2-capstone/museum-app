@@ -84,10 +84,11 @@
 
 @keyframes shimmer {
   0% {
-      background-position: 0 0;
+    background-position: 0 0;
   }
+
   100% {
-      background-position: 200% 0;
+    background-position: 200% 0;
   }
 }
 
@@ -118,55 +119,56 @@
 }
 
 
-  .heart-button {
-    color: #95BF74;
-  }
+.heart-button {
+  color: #95BF74;
+}
 
 /* Container for Register and Login forms */
 .form-container {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .auth-container {
   position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 
-  .auth-background::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-image: url("../images/skyline.jpg");
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
-    background-position: center 20%;
-    opacity: 0.5;
+.auth-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url("/Images/skyline.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  background-position: center 20%;
+  opacity: 0.5;
 
-  }
+}
 
 .auth-background {
   display: flex;
   justify-content: center;
-    align-items: center;
-   /* isolation: isolate; */
+  align-items: center;
+  /* isolation: isolate; */
 
 }
 
 
 
 /* Style each form individually if needed */
-.auth-container > div {
+.auth-container>div {
   /* flex: 1; */
-  margin: 10px; /* Add spacing between forms */
+  margin: 10px;
+  /* Add spacing between forms */
 }
 
 
@@ -203,87 +205,94 @@
 /* Form Heading */
 .register-container h1,
 .login-container h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
 }
 
 /* Form Inputs */
 .register-container form input,
 .login-container form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
 /* Submit Button */
 .register-container form button,
 .login-container form button {
-    background: linear-gradient(45deg, #99DDC8, #9DBEBB, #99DDC8);
-    color: #283F3B;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    width: 100%;
-    transition: box-shadow 0.3s ease-in-out;
+  background: linear-gradient(45deg, #99DDC8, #9DBEBB, #99DDC8);
+  color: #283F3B;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 /* Shining effect on hover */
 .register-container form button:hover,
 .login-container form button:hover {
-    background: linear-gradient(45deg, #99DDC8, #9DBEBB, #99DDC8);
-    animation: shimmer 5s linear infinite;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  background: linear-gradient(45deg, #99DDC8, #9DBEBB, #99DDC8);
+  animation: shimmer 5s linear infinite;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
 }
 
 /* Shimmer animation */
 @keyframes shimmer {
-    0% {
-        background-position: -500px 0;
-    }
-    100% {
-        background-position: 500px 0;
-    }
+  0% {
+    background-position: -500px 0;
+  }
+
+  100% {
+    background-position: 500px 0;
+  }
 }
 
 /* Error Message */
 .error-message {
-    color: #d9534f;
-    margin-top: 10px;
-    text-align: center;
-    font-weight: bold;
+  color: #d9534f;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
 }
 
 /* Success Message */
 .success-message {
-    color: #5cb85c;
-    margin-top: 10px;
-    text-align: center;
-    font-weight: bold;
+  color: #5cb85c;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .error-button,
 .success-button {
-  background: none; /* Remove background gradient */
-  color: inherit; /* Inherit text color */
-  border: 1px solid transparent; /* Remove border */
+  background: none;
+  /* Remove background gradient */
+  color: inherit;
+  /* Inherit text color */
+  border: 1px solid transparent;
+  /* Remove border */
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
-  transition: none; /* Remove transition */
+  transition: none;
+  /* Remove transition */
 }
 
 /* Optionally, you can add specific styles for error and success buttons */
 .error-button {
-  color: #d9534f; /* Set error button text color */
+  color: #d9534f;
+  /* Set error button text color */
 }
 
 .success-button {
-  color: #5cb85c; /* Set success button text color */
+  color: #5cb85c;
+  /* Set success button text color */
 }

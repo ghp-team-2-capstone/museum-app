@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logOut } from "../../Redux/authSlice"; // import "./Navbar.css"; // Import your CSS file
 import "./Navbar.css"; // Import your CSS file
-import logo from ".././images/logo.png";
+// import logo from ".././Images/logo.png";
 import { resetFavorites } from "../../Redux/favoriteSlice";
 import Dropdown from "./Dropdown";
 
@@ -21,7 +21,7 @@ function Navbar({ token }) {
   return (
     <div className="navbar-container">
       <nav className="navbar">
-        <img src={logo} alt="Logo" className="logo" />
+        <img src="/Images/logo.png" alt="Logo" className="logo" />
         <img />
         <h1 className="navbar-title">Museum App</h1>
         <ul className="nav-links">
