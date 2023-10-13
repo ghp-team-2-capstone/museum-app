@@ -250,12 +250,30 @@
   padding-left: 10px;
 }
 
+/* SINGLE MUSEUMS PAGE  */
+.single-museum-card {
+  display: flex;
+  align-items: flex-start;
+}
+
+.single-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 /* FAVORITE BUTTON */
+.favorite-museum {
+  display: flex;
+  justify-content: flex-end;
+}
 
 .heart-container {
   display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
+  /* flex-direction: row-reverse; */
+  align-items: flex-start;
   justify-content: space-between;
   margin-left: auto;
   margin-top: 20px;
@@ -269,8 +287,8 @@
   cursor: pointer;
   width: 36px;
   height: 36px;
-  right: 0;
-  top: 50%;
+  left: 0;
+  top: 0;
   transform: translateY(-50%);
 }
 
@@ -283,9 +301,8 @@
   white-space: nowrap;
   overflow: hidden;
   position: absolute;
-  right: 24px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-77%);
 }
 
 .heart-button:hover+.favorite-text {

@@ -48,37 +48,39 @@ export default function GetSingleMuseum({ token, userId }) {
               />
             )}
           </div>
-          <h3 className="museum-headers">{museum.museumName}</h3>
-          <p>{museum.description}</p>
-          <img
-            src={museum.image}
-            alt={museum.museumName}
-            className="museum-image"
-          />
-          <a
-            href={museum.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="museum-link"
-          >
-            Learn More
-          </a>
-          <br />
+          <div className="single-content">
+            <h3 className="museum-headers">{museum.museumName}</h3>
+            <p>{museum.description}</p>
+            <img
+              src={museum.image}
+              alt={museum.museumName}
+              className="museum-image"
+            />
+            <a
+              href={museum.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="museum-link"
+            >
+              Learn More
+            </a>
+            <br />
 
-          <SingleReview
-            museumId={params.museumId}
-            token={token}
-            userId={userId}
-          />
+            <SingleReview
+              museumId={params.museumId}
+              token={token}
+              userId={userId}
+            />
 
-          <button
-            className="museum-buttons"
-            onClick={() => {
-              navigate(`/map`);
-            }}
-          >
-            Back to Map
-          </button>
+            <button
+              className="museum-buttons"
+              onClick={() => {
+                navigate(`/map`);
+              }}
+            >
+              Back to Map
+            </button>
+          </div>{" "}
         </div>
       )}
     </div>
