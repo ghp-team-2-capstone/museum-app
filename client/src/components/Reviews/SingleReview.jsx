@@ -8,7 +8,6 @@ import CreateReview from "./CreateReview";
 import AverageRating from "./AverageRating";
 import "./ReviewCard.css"; // Import the CSS file for the review section
 
-
 export default function SingleReview({ museumId, token, userId }) {
   const [reviews, setReviews] = useState([]);
   const [selectedReview, setSelectedReview] = useState(null);
@@ -128,28 +127,17 @@ export default function SingleReview({ museumId, token, userId }) {
         />
       )}
       {token && (
-        <div className="create-review-container">
-          <CreateReview
-            reviews={reviews}
-            setReviews={setReviews}
-            token={token}
-            museumId={museumId}
-            userId={userId}
-          />
-        </div>
+        <CreateReview
+          reviews={reviews}
+          setReviews={setReviews}
+          token={token}
+          museumId={museumId}
+          userId={userId}
+        />
       )}
     </>
   );
 }
-
-
-
-
-
-
-
-
-
 
 // import React, { useState, useEffect } from "react";
 // import { useNavigate } from "react-router-dom";

@@ -6,6 +6,7 @@ import {
 } from "../../Redux/favoriteSlice";
 import { addNewFavorite, deleteFavorite } from "../../helpers/fetching";
 import { HiHeart, HiOutlineHeart } from "react-icons/hi";
+import "./AllMuseums.css";
 
 export default function FavoriteMuseum({ userId, museumId, token }) {
   const favoriteMuseums = useSelector(selectFavorites);
@@ -59,21 +60,26 @@ export default function FavoriteMuseum({ userId, museumId, token }) {
     <div>
       {isFavorite ? (
         <>
-          <HiHeart
-            size={36}
-            className="heart-button"
-            onClick={handleRemoveFavorite}
-          />
-          <span className="favorite-overlay">Remove from Favorites</span>
+          <div className="heart-container">
+            <HiHeart
+              size={36}
+              className="heart-button"
+              onClick={handleRemoveFavorite}
+            />
+            <span className="favorite-text">Remove from Favorites</span>
+          </div>
         </>
       ) : (
         <>
-          <HiOutlineHeart
-            size={36}
-            color="#95BF74"
-            onClick={handleAddFavorite}
-          />
-          <span className="favorite-overlay">Add to Favorites</span>
+          <div className="heart-container">
+            <HiOutlineHeart
+              size={36}
+              color="#95BF74"
+              className="heart-button"
+              onClick={handleAddFavorite}
+            />
+            <span className="favorite-text">Add to Favorites</span>
+          </div>
         </>
       )}
     </div>

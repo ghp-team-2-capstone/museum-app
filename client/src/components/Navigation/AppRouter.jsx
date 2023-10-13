@@ -4,7 +4,9 @@ import Map from "../Map/Map";
 import GetAllMuseums from "../Museums/GetAllMuseums";
 import UserProfile from "../Users/UserProfile";
 import Logout from "../Users/Logout";
-import Auth from "../Users/Auth";
+import Register from "../Users/Register";
+import Login from "../Users/Login";
+// import Auth from "../Users/Auth";
 import Navbar from "./NavBar";
 import GetSingleMuseum from "../Museums/GetSingleMuseum";
 import MyMuseumsList from "../Users/MyMuseumsList";
@@ -19,7 +21,7 @@ import UserReviews from "../Users/UserReviews";
 
 export default function AppRouter() {
   const token = useSelector(selectCurrentToken);
-  const username = useSelector(selectCurrentUsername);
+  const currentUser = useSelector(selectCurrentUsername);
   const userId = useSelector(selectCurrentUserId);
 
   return (
@@ -36,7 +38,11 @@ export default function AppRouter() {
           <Route
             path="/profile/journal"
             element={
-              <UserProfile token={token} username={username} userId={userId} />
+              <UserProfile
+                token={token}
+                currentUser={currentUser}
+                userId={userId}
+              />
             }
           />
           <Route
@@ -47,7 +53,9 @@ export default function AppRouter() {
             path="/profile/favorites"
             element={<MyMuseumsList userId={userId} token={token} />}
           />
-          <Route path="/register" element={<Auth token={token} />} />
+          {/* <Route path="/register" element={<Auth token={token} />} /> */}
+          <Route path="/register" element={<Register token={token} />} />
+          <Route path="/login" element={<Login token={token} />} />
           <Route path="/logout" element={<Logout />} />
           <Route
             path="/museums/:museumId"

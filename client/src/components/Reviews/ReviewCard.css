@@ -41,7 +41,7 @@
 }
 
 /* Styles for buttons with green stars and made to look exactly the same */
-.edit-review-button, .delete-review-button, .update-button, .cancel-button {
+.edit-review-button, .delete-review-button, .new-button, .cancel-button {
     background-color: #34495e;
     color: #fff;
     border: none;
@@ -54,8 +54,9 @@
     overflow: hidden;
 }
 
+
 /* Glimmering effect with changing colors */
-.edit-review-button:hover, .delete-review-button:hover, .update-button:hover, .cancel-button:hover {
+.edit-review-button:hover, .delete-review-button:hover, .new-button:hover, .cancel-button:hover {
     background: linear-gradient(45deg, #99DDC8, #659B5E, #95BF74, #556F44);
     background-size: 200% 200%;
     animation: shimmer 6s linear infinite;
@@ -145,3 +146,58 @@
     justify-content: flex-end; /* Align buttons to the right */
 }
 
+
+
+
+
+
+
+/* CreateReview.css */
+.create-review {
+    background: linear-gradient(90deg, #556f44be, #F4E9CD, #99ddc894);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+
+.create-review-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.create-review-rating {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.create-review-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.create-review-textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.create-review-button {
+    background: linear-gradient(45deg, #468189, #659B5E, #95BF74, #556F44);
+    color: black;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.create-review-button:hover {
+    background: #556f445b; /* Set to the desired color with no hover animation */
+}

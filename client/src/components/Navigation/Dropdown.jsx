@@ -9,9 +9,9 @@ const Dropdown = () => {
   const handleOpen = () => {
     setOpen(!open);
   };
-  const handleClose = () => {
-    setOpen(false);
-  };
+  // const handleClose = () => {
+  //   setOpen(false);
+  // };
 
   return (
     <div className="dropdown">
@@ -24,7 +24,7 @@ const Dropdown = () => {
           <li>
             <Link
               to="/profile/journal"
-              onClick={handleClose}
+              // onClick={handleClose}
               className="nav-anchor"
             >
               Journal
@@ -33,7 +33,7 @@ const Dropdown = () => {
           <li>
             <Link
               to="/profile/reviews"
-              onClick={handleClose}
+              // onClick={handleClose}
               className="nav-anchor"
             >
               Reviews
@@ -42,7 +42,7 @@ const Dropdown = () => {
           <li>
             <Link
               to="/profile/favorites"
-              onClick={handleClose}
+              // onClick={handleClose}
               className="nav-anchor"
             >
               Favorites

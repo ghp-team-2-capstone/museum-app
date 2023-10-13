@@ -3,11 +3,14 @@ import { fetchAllMuseums } from "../../helpers/fetching";
 import "./AllMuseums.css";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../Loading/Spinner";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 export default function GetAllMuseums() {
   const [museums, setMuseums] = useState([]);
   const [error, setError] = useState(null);
   const [searchParam, setSearchParam] = useState("");
+  const [isSearchBarExpanded, setIsSearchBarExpanded] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,34 +31,47 @@ export default function GetAllMuseums() {
       )
     : museums;
 
+  const toggleSearchBar = () => {
+    setIsSearchBarExpanded(!isSearchBarExpanded);
+  };
+
   return (
-    <div className="all-museums-container">
-      <h1 className="page-title">All Museums</h1>
+    <div>
+      <div className="page-header">
+        <h1>Browse Museums</h1>
+      </div>
+      <div className="search-museums-container">
+        <button className="search-btn-museums" onClick={toggleSearchBar}>
+          <FontAwesomeIcon icon={faSearch} />
+        </button>
 
-      <label className="search-filter-label">
-        <h4>Search:</h4>
-        <input
-          id="search-museums-bar"
-          type="text"
-          placeholder="Search museums"
-          onChange={(event) => setSearchParam(event.target.value.toLowerCase())}
-        />
-      </label>
-
+        <label className="search-museums-bar">
+          <input
+            id="search-museums-bar"
+            type="text"
+            placeholder="Explore Museums"
+            onChange={(event) =>
+              setSearchParam(event.target.value.toLowerCase())
+            }
+            className={isSearchBarExpanded ? "expanded" : ""}
+          />
+        </label>
+      </div>
       {searchedMuseumsPage.length === 0 ? (
         <Spinner />
       ) : (
-        <div className="museum-list">
+        <div className="all-museums-container">
           {searchedMuseumsPage.map((museum) => (
             <div key={museum.museumName} className="museum-item">
               <h2 className="museum-headers">{museum.museumName}</h2>
-              <img
-                src={museum.image}
-                alt={museum.museumName}
-                className="museum-image"
-              />
-              <p className="museum-description">{museum.description}</p>
-
+              <div className="image-and-text">
+                <img
+                  src={museum.image}
+                  alt={museum.museumName}
+                  className="museum-image"
+                />
+                <p className="museum-description">{museum.description}</p>
+              </div>
               <div className="button-container">
                 <button
                   className="details-button"
@@ -71,7 +87,7 @@ export default function GetAllMuseums() {
                   rel="noopener noreferrer"
                   className="learn-more-button"
                 >
-                  Learn More
+                  Museum Website
                 </a>
               </div>
             </div>
@@ -81,17 +97,6 @@ export default function GetAllMuseums() {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
 
 // import React, { useState, useEffect } from "react";
 // import { fetchAllMuseums } from "../../helpers/fetching";

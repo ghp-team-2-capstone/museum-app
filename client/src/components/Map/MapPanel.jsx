@@ -53,16 +53,26 @@ const MapPanel = ({ museums, selectedMarker, setSelectedMarker }) => {
     setSelectedMuseumReviews([]);
   };
 
+  const toggleDescriptionExpansion = () => {
+    setDescriptionExpanded(!descriptionExpanded);
+  };
+
+  const closeDescription = () => {
+    setDescriptionExpanded(false);
+  };
+
   return (
     <div className="side-panel">
       <br />
       {selectedMuseum ? (
-        <div>
-          <img
-            src={selectedMuseum.image}
-            alt={selectedMuseum.museumName}
-            style={{ width: "300px" }}
-          />
+        <div className="single-museum-content">
+          <div onClick={() => navigate(`/museums/${selectedMarker.museumId}`)}>
+            <img
+              src={selectedMuseum.image}
+              alt={selectedMuseum.museumName}
+              style={{ width: "300px" }}
+            />
+          </div>
           <h3>
             {selectedMuseum.museumName}
 
@@ -86,46 +96,55 @@ const MapPanel = ({ museums, selectedMarker, setSelectedMarker }) => {
           </p>
           {selectedMuseum.description.length > 150 && (
             <button
-              onClick={() => setDescriptionExpanded(!descriptionExpanded)}
+              onClick={toggleDescriptionExpansion}
               className="see-more-button"
             >
               {descriptionExpanded ? "See Less" : "See More"}
             </button>
           )}{" "}
           <br />
-          <SingleReview museumId={selectedMuseum.museumId} />
+          <SingleReview
+            museumId={selectedMuseum.museumId}
+          />
           <div className="exit-button-container">
-            <button
-              className="exit-button"
-              onClick={exitSingleMuseumView}
-            >
+            <button className="exit-button" onClick={exitSingleMuseumView}>
               &#x2716;
             </button>
           </div>
         </div>
       ) : (
-        <ul>
-          {museums.map((museum) => (
-            <li key={museum.museumName}>
-              <img
-                src={museum.image}
-                alt={museum.museumName}
-                style={{ width: "300px" }}
-              />
-              <h4
-                onClick={() => {
-                  handleSelectMuseumByName(museum);
-                }}
-              >
-                {museum.museumName}
-              </h4>
-              <AverageRating
-                museumId={museum.museumId}
-                reviews={museumReviews[museum.museumId] || []}
-              />
-            </li>
-          ))}
-        </ul>
+        <div className="all-museums-content">
+          <ul>
+            {museums.map((museum) => (
+              <li key={museum.museumName}>
+                <div
+                  onClick={() => {
+                    handleSelectMuseumByName(museum);
+                    closeDescription();
+                  }}
+                >
+                  <img
+                    src={museum.image}
+                    alt={museum.museumName}
+                    style={{ width: "300px" }}
+                  />
+                </div>
+                <h4
+                  onClick={() => {
+                    handleSelectMuseumByName(museum);
+                    closeDescription();
+                  }}
+                >
+                  {museum.museumName}
+                </h4>
+                <AverageRating
+                  museumId={museum.museumId}
+                  reviews={museumReviews[museum.museumId] || []}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
     </div>
   );

@@ -45,15 +45,10 @@ async function loginUser(username, password) {
       }),
     });
 
-    if (response.status === 200) {
-      const result = await response.json();
-      return result;
-    } else {
-      const errorResponse = await response.json();
-      return { error: errorResponse.message }; // Return an error message
-    }
+    const result = await response.json();
+    return result;
   } catch (error) {
-    console.error(error);
+    console.error("Invalid credentials", error);
   }
 }
 
@@ -83,7 +78,7 @@ async function logoutUser(username, password) {
 
 async function fetchUserByUsername(username) {
   try {
-    const response = await fetch(`${baseURL}/users/${username}`);
+    const response = await fetch(`${baseURL}/users/user/${username}`);
     const result = await response.json();
     console.log(result);
     return result;

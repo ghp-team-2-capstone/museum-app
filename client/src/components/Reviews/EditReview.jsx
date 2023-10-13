@@ -75,7 +75,7 @@ export default function EditReview({
           value={newBody}
           onChange={(event) => setNewBody(event.target.value)}
         />
-        <button className="update-button" type="submit">Update</button> {/* Apply update-button class for styling */}
+        <button className="new-button" >Update</button> {/* Apply update-button class for styling */}
         <button className="cancel-button" onClick={onCancel}>Cancel</button> {/* Apply cancel-button class for styling */}
       </form>
     </div>

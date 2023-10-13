@@ -59,7 +59,7 @@ const MapMarkers = ({
   });
 
   return (
-    <>
+    <div className="infowindow-container">
       {filteredMuseums.map((museum) => (
         <Marker
           key={museum.museumId}
@@ -87,41 +87,52 @@ const MapMarkers = ({
             setSelectedMarker(null);
           }}
         >
-          <div style={{ maxWidth: "300px", maxHeight: "50vh" }}>
+          <div className="info-window">
             <img
               src={selectedMarker.image}
               alt={selectedMarker.museumName}
-              style={{ width: "250px" }}
+              style={{
+                width: "200px",
+                marginBottom: "0.5em",
+                marginLeft: "auto",
+                marginRight: "auto",
+                display: "block",
+              }}
             />
-            <h3>{selectedMarker.museumName}</h3>
+            <h3 className="museumName-infowindow">
+              {selectedMarker.museumName}
+            </h3>
 
             <AverageRating
               museumId={selectedMarker.museumId}
               reviews={reviews}
             />
 
-            <button
-              className="detailsButton"
-              onClick={() => {
-                navigate(`/museums/${selectedMarker.museumId}`);
-              }}
-            >
-              See Details
-            </button>
-
-            <p>
-              <a
-                href={`https://www.google.com/maps/dir/?api=1&destination=${selectedMarker.lat},${selectedMarker.lng}`}
-                target="_blank"
-                rel="noopener noreferrer"
+            <div className="detailsbutton-container">
+              <button
+                className="detailsButtonIF"
+                onClick={() => {
+                  navigate(`/museums/${selectedMarker.museumId}`);
+                }}
               >
-                Get Directions
-              </a>
-            </p>
+                See Details
+              </button>
+
+              <p>
+                <a
+                  href={`https://www.google.com/maps/dir/?api=1&destination=${selectedMarker.lat},${selectedMarker.lng}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="get-directions-link"
+                >
+                  Get Directions
+                </a>
+              </p>
+            </div>
           </div>
         </InfoWindowF>
       )}
-    </>
+    </div>
   );
 };
 export default MapMarkers;

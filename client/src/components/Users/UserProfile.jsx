@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import {
   fetchJournalEntriesByUserId,
   addJournalEntry,
@@ -14,6 +13,7 @@ export default function JournalEntries({ token, userId }) {
   const [editingEntry, setEditingEntry] = useState(null);
   const [newEntry, setNewEntry] = useState({ title: "", body: "" });
   const [searchQuery, setSearchQuery] = useState("");
+  const [customDate, setCustomDate] = useState("");
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -49,11 +49,12 @@ export default function JournalEntries({ token, userId }) {
         userId,
         newEntry.title,
         newEntry.body,
-        new Date().toISOString()
+        customDate || new Date().toISOString()
       );
 
       setJournalEntries([...journalEntries, createdEntry]);
       setNewEntry({ title: "", body: "" });
+      setCustomDate(""); // Clear the custom date
     } catch (error) {
       setError("Failed to create a journal entry. Please try again later.");
     }
@@ -108,8 +109,10 @@ export default function JournalEntries({ token, userId }) {
   };
 
   // Filter entries based on the search query
-  const filteredEntries = journalEntries.filter((entry) =>
-    entry.title.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredEntries = journalEntries.filter(
+    (entry) =>
+      entry.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      entry.body.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
@@ -207,7 +210,18 @@ export default function JournalEntries({ token, userId }) {
             rows={5} // Adjust the number of rows as needed
             placeholder="Body"
             value={newEntry.body}
-            onChange={(e) => setNewEntry({ ...newEntry, body: e.target.value })}
+            onChange={(e) =>
+              setNewEntry({ ...newEntry, body: e.target.value })
+            }
+          />
+        </div>
+        <div className="form-input">
+          <label htmlFor="customDate">Custom Date (optional)</label>
+          <input
+            type="date"
+            id="customDate"
+            value={customDate}
+            onChange={(e) => setCustomDate(e.target.value)}
           />
         </div>
         <button className="create-button" onClick={handleCreateEntry}>
@@ -218,7 +232,26 @@ export default function JournalEntries({ token, userId }) {
   );
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // import React, { useState, useEffect } from "react";
+// import { useNavigate } from "react-router-dom";
 // import {
 //   fetchJournalEntriesByUserId,
 //   addJournalEntry,
@@ -232,8 +265,13 @@ export default function JournalEntries({ token, userId }) {
 //   const [error, setError] = useState(null);
 //   const [editingEntry, setEditingEntry] = useState(null);
 //   const [newEntry, setNewEntry] = useState({ title: "", body: "" });
+//   const [searchQuery, setSearchQuery] = useState("");
 
-//   // Fetch all journal entries
+//   const formatDate = (dateString) => {
+//     const date = new Date(dateString);
+//     return date.toLocaleDateString();
+//   };
+
 //   useEffect(() => {
 //     const fetchEntries = async () => {
 //       try {
@@ -249,7 +287,7 @@ export default function JournalEntries({ token, userId }) {
 //     };
 
 //     fetchEntries();
-//   }, []);
+//   }, [userId]);
 
 //   const handleCreateEntry = async () => {
 //     if (!token) {
@@ -321,15 +359,28 @@ export default function JournalEntries({ token, userId }) {
 //     }
 //   };
 
+//   // Filter entries based on the search query
+//   const filteredEntries = journalEntries.filter((entry) =>
+//     entry.title.toLowerCase().includes(searchQuery.toLowerCase())
+//   );
+
 //   return (
-//     <div>
+//     <div className="journal-entries-container">
 //       <h1>Journal Entries</h1>
-//       {error && <p>{error}</p>}
-//       <ul>
-//         {journalEntries.map((entry) => (
-//           <li key={entry.entryId}>
+//       {error && <p className="error-message">{error}</p>}
+//       <div className="search-bar">
+//         <input
+//           type="text"
+//           placeholder="Search entries..."
+//           value={searchQuery}
+//           onChange={(e) => setSearchQuery(e.target.value)}
+//         />
+//       </div>
+//       <ul className="journal-entry-list">
+//         {filteredEntries.map((entry) => (
+//           <li key={entry.entryId} className="journal-entry-card">
 //             {editingEntry?.entryId === entry.entryId ? (
-//               <div>
+//               <div className="edit-entry-form">
 //                 <h2>Edit Journal Entry</h2>
 //                 <input
 //                   type="text"
@@ -361,15 +412,15 @@ export default function JournalEntries({ token, userId }) {
 //                 </button>
 //               </div>
 //             ) : (
-//               <div>
+//               <div className="view-entry">
 //                 <h2>{entry.title}</h2>
 //                 <p>{entry.body}</p>
-//                 <p>Date: {entry.date}</p>
+//                 <p>Date: {formatDate(entry.date)}</p>
 //                 {token && (
-//                   <>
+//                   <div className="action-buttons">
 //                     <button
 //                       className="delete-button"
-//                       onClick={() => handleDeleteEntry(entry.entryId)} // Pass entryId to the function
+//                       onClick={() => handleDeleteEntry(entry.entryId)}
 //                     >
 //                       Delete
 //                     </button>
@@ -379,27 +430,38 @@ export default function JournalEntries({ token, userId }) {
 //                     >
 //                       Edit
 //                     </button>
-//                   </>
+//                   </div>
 //                 )}
 //               </div>
 //             )}
 //           </li>
 //         ))}
 //       </ul>
-//       <div>
+//       <div className="create-entry-form">
 //         <h2>Create New Journal Entry</h2>
-//         {error && <p>{error}</p>}
-//         <input
-//           type="text"
-//           placeholder="Title"
-//           value={newEntry.title}
-//           onChange={(e) => setNewEntry({ ...newEntry, title: e.target.value })}
-//         />
-//         <textarea
-//           placeholder="Body"
-//           value={newEntry.body}
-//           onChange={(e) => setNewEntry({ ...newEntry, body: e.target.value })}
-//         />
+//         {error && <p className="error-message">{error}</p>}
+//         <div className="form-input">
+//           <label htmlFor="entryTitle">Title</label>
+//           <input
+//             type="text"
+//             id="entryTitle"
+//             placeholder="Title"
+//             value={newEntry.title}
+//             onChange={(e) =>
+//               setNewEntry({ ...newEntry, title: e.target.value })
+//             }
+//           />
+//         </div>
+//         <div className="form-input">
+//           <label htmlFor="entryBody">Body</label>
+//           <textarea
+//             id="entryBody"
+//             rows={5} // Adjust the number of rows as needed
+//             placeholder="Body"
+//             value={newEntry.body}
+//             onChange={(e) => setNewEntry({ ...newEntry, body: e.target.value })}
+//           />
+//         </div>
 //         <button className="create-button" onClick={handleCreateEntry}>
 //           Create
 //         </button>
@@ -407,3 +469,4 @@ export default function JournalEntries({ token, userId }) {
 //     </div>
 //   );
 // }
+

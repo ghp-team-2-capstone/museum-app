@@ -1,9 +1,28 @@
 /* AllMuseums.css */
-.all-museums {
-  display: grid;
-  grid-column-gap: 0.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+
+.page-header {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 3rem;
+  color: white;
+  background-image: url('../Images/monetpaint.png');
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.page-header h1 {
+  padding-left: 4rem;
+}
+
+.all-museums-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 0.25rem;
+  width: 100%;
+  grid-auto-rows: 1fr;
+
+}
+
 
 /* Style the See Details and Learn More buttons */
 .details-button,
@@ -37,9 +56,12 @@
 }
 
 @keyframes shimmer {
-  0%, 100% {
+
+  0%,
+  100% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
@@ -50,32 +72,42 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center the content vertically */
-  align-items: center; /* Center the content horizontally */
+  justify-content: center;
+  /* Center the content vertically */
+  align-items: center;
+  /* Center the content horizontally */
   margin-bottom: 20px;
+  margin-left: 20px;
   /* Add margin between each museum card */
   border: 1px solid #ddd;
   background-color: #fff;
-  margin: 20px 0;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  /* Add a subtle box shadow */
   transition: transform 0.2s;
   /* Add a smooth transition effect */
   list-style: none;
 }
 
+
 /* Style the museum images within the card */
 .museum-image {
-  max-width: 300px; /* Increased max-width for larger images */
-  height: auto; /* Maintain the image aspect ratio */
-  transition: transform 0.2s, box-shadow 0.2s; /* Add transitions for image scaling and box shadow */
+  max-width: 300px;
+  height: auto;
+  transition: transform 0.2s, box-shadow 0.2s;
+  float: left;
+  margin: 1rem;
+
 }
+
 
 /* Add a subtle zoom effect on hover for the museum image */
 .museum-item:hover .museum-image {
-  transform: scale(1.03); /* Slightly zoom in the image on hover */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow on hover */
+  transform: scale(1.03);
+  /* Slightly zoom in the image on hover */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Add a subtle box shadow on hover */
 }
 
 /* Style the museum headers (museum name) */
@@ -120,28 +152,6 @@
   /* Button background color on hover */
 }
 
-.museum-item:hover .overlay {
-  opacity: 1;
-}
-
-.overlay {
-  position: absolute;
-  top: 0; /* Position it at the top of .museum-item */
-  left: 0;
-  background: rgba(0, 0, 0, 0.8);
-  width: 100%;
-  transition: 0.5s ease;
-  opacity: 0;
-  /* bottom: 0; */
-  font-size: 20px;
-  padding: 20px;
-  text-align: center;
-}
-
-.favorite-overlay {
-  color: white;
-}
-
 .loader {
   border: 10px solid #f3f3f3;
   border-radius: 50%;
@@ -157,10 +167,10 @@
   border-left: 16px solid #95BF74;
 }
 
-.loader img {
+/* .loader img {
   width: 70px;
   height: 70px;
-}
+} */
 
 @keyframes spin {
   0% {
@@ -180,12 +190,110 @@
   }
 }
 
+/* ALL MUSEUMS SEARCH */
+.search-museums-container {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  align-items: center;
+  margin-top: 0.5em;
+  margin-right: 1em;
+  margin-bottom: 3em;
+}
+
+#search-museums-bar {
+  height: 40px;
+  outline: none;
+  border: none;
+  background: none;
+  transition: width 0.3s ease-in-out;
+  border-bottom: 1px solid #283f3b;
+  width: 0;
+  margin-top: 0.5em;
+  margin-right: 3em;
+  right: 0;
+  color: #283f3b;
+}
+
+#search-museums-bar::placeholder {
+  color: #0000004d;
+  font-size: 1em;
+}
+
+#search-museums-bar.expanded {
+  width: 70%;
+  opacity: 1;
+}
+
+.search-btn-museums {
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background: #283f3b;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: 0.3s;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.search-btn-museums:hover {
+  background: #fff;
+  color: #283f3b;
+}
+
+#search-museums-bar.expanded {
+  width: 70%;
+  padding-left: 10px;
+}
+
+/* FAVORITE BUTTON */
+
+.heart-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-top: 20px;
+  position: relative;
+  padding: 20px;
+}
+
+.heart-button {
+  position: absolute;
+  color: #95BF74;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.favorite-text {
+  color: #9fd5cc;
+  opacity: 0;
+  transition: 0.3s;
+  font: 12px;
+  padding: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.heart-button:hover+.favorite-text {
+  opacity: 1;
+  color: #77ACA2;
+}
 
 
-
-
-
-
-
-
-
+.button-container {
+  margin-top: auto;
+}
