@@ -49,12 +49,12 @@ export default function GetSingleMuseum({ token, userId }) {
             )}
           </div>
           <div className="single-content">
-            <h3 className="museum-headers">{museum.museumName}</h3>
+            <h3 className="museum-headers-single">{museum.museumName}</h3>
             <p>{museum.description}</p>
             <img
               src={museum.image}
               alt={museum.museumName}
-              className="museum-image"
+              className="museum-image-single"
             />
             <a
               href={museum.link}

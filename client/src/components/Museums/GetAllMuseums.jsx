@@ -62,7 +62,7 @@ export default function GetAllMuseums() {
       ) : (
         <div className="all-museums-container">
           {searchedMuseumsPage.map((museum) => (
-            <div key={museum.museumName} className="museum-item">
+            <div key={museum.museumName} className="museum-item-all">
               <h2 className="museum-headers">{museum.museumName}</h2>
               <div className="image-and-text">
                 <img
