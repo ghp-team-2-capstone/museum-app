@@ -10,11 +10,17 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
     overflow: hidden;
+    transition: transform 0.2s ease-in-out;
 }
+
+.player-card:hover {
+    transform: translateY(-3px);
+  }
 
 .player-card-content {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 /* Styles for star rating component with green stars */

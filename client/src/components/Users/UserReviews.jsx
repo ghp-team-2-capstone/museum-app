@@ -103,20 +103,21 @@ export default function UserReviews({ userId, token }) {
                   >
                     Delete Review
                   </button>
+
+                  {selectedReview === review && (
+                    <EditReview
+                      reviewId={selectedReview.reviewId}
+                      onCancel={handleCancelEdit}
+                      token={token}
+                      userId={userId}
+                      museumId={selectedReview.museumId}
+                      onUpdateReview={updateReview}
+                    />
+                  )}
                 </div>
               )}
             </div>
           ))
-        )}
-        {selectedReview && (
-          <EditReview
-            reviewId={selectedReview.reviewId}
-            onCancel={handleCancelEdit}
-            token={token}
-            userId={userId}
-            museumId={selectedReview.museumId}
-            onUpdateReview={updateReview}
-          />
         )}
       </div>
     </>
