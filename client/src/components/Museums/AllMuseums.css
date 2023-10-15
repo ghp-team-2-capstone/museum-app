@@ -98,7 +98,7 @@
 }
 
 /* Add a subtle zoom effect on hover for the museum image */
-.museum-item:hover .museum-image {
+.museum-item-all:hover .museum-image {
   transform: scale(1.03);
   /* Slightly zoom in the image on hover */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -191,9 +191,9 @@
   justify-content: flex-end;
   position: relative;
   align-items: center;
-  margin-top: 0.5em;
+  margin-top: 1em;
   margin-right: 1em;
-  margin-bottom: 3em;
+  margin-bottom: 1em;
 }
 
 #search-museums-bar {

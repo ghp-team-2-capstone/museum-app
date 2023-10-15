@@ -65,11 +65,13 @@ export default function GetAllMuseums() {
             <div key={museum.museumName} className="museum-item-all">
               <h2 className="museum-headers">{museum.museumName}</h2>
               <div className="image-and-text">
-                <img
-                  src={museum.image}
-                  alt={museum.museumName}
-                  className="museum-image"
-                />
+                <a href={`/museums/${museum.museumId}`}>
+                  <img
+                    src={museum.image}
+                    alt={museum.museumName}
+                    className="museum-image"
+                  />
+                </a>
                 <p className="museum-description">{museum.description}</p>
               </div>
               <div className="button-container">
