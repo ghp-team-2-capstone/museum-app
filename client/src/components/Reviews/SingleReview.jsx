@@ -76,6 +76,10 @@ export default function SingleReview({ museumId, token, userId }) {
 
   return (
     <>
+      <div className="averageRating">
+        <AverageRating museumId={museumId} reviews={reviews} />
+      </div>
+
       {token && (
         <CreateReview
           reviews={reviews}
@@ -85,10 +89,6 @@ export default function SingleReview({ museumId, token, userId }) {
           userId={userId}
         />
       )}
-
-      <div className="averageRating">
-        <AverageRating museumId={museumId} reviews={reviews} />
-      </div>
 
       <h3 className="review-title">Reviews</h3>
       {reviews.length === 0 ? (
