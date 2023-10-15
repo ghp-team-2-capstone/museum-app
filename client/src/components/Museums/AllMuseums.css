@@ -265,9 +265,12 @@
 }
 
 /* FAVORITE BUTTON */
+
 .favorite-museum {
-  display: flex;
-  justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1vw;
 }
 
 .heart-container {
