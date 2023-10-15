@@ -74,23 +74,18 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* Center the content vertically */
   align-items: center;
-  /* Center the content horizontally */
   margin-bottom: 20px;
   margin-left: 20px;
-  /* Add margin between each museum card */
+  margin-right: 20px;
   border: 1px solid #ddd;
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  /* Add a subtle box shadow */
   transition: transform 0.2s;
-  /* Add a smooth transition effect */
   list-style: none;
 }
-
 
 /* Style the museum images within the card */
 .museum-image {
@@ -101,7 +96,6 @@
   margin: 1rem;
 
 }
-
 
 /* Add a subtle zoom effect on hover for the museum image */
 .museum-item:hover .museum-image {
