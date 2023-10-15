@@ -3,11 +3,13 @@
 /* Styles for player cards and the edit-review container */
 .player-card, .edit-review-container {
     border: 1px solid #ddd;
-    background-color: #fff;
+    background-color: #ffffff97;
     margin: 20px 0;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    overflow: hidden;
 }
 
 .player-card-content {
@@ -73,6 +75,18 @@
 }
 
 /* Styles for the create review textarea */
+.create-review {
+    background: linear-gradient(90deg, #556f44be, #F4E9CD, #99ddc894);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    width: 100%;
+}
+
 .create-review-container {
     margin-top: 16px;
 }
