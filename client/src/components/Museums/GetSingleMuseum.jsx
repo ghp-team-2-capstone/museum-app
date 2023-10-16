@@ -50,7 +50,6 @@ export default function GetSingleMuseum({ token, userId }) {
           </div>
           <div className="single-content">
             <h3 className="museum-headers-single">{museum.museumName}</h3>
-            <p>{museum.description}</p>
             <img
               src={museum.image}
               alt={museum.museumName}
@@ -65,6 +64,7 @@ export default function GetSingleMuseum({ token, userId }) {
               Learn More
             </a>
             <br />
+            <p style={{ textAlign: 'justify' }}>{museum.description}</p><br/>
 
             <SingleReview
               museumId={params.museumId}
