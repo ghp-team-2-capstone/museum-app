@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import homeVideo from "../Images/homepage.mp4";
+// import homeVideo from "../Images/homepage.mp4";
 
 export default function Home() {
   const navigate = useNavigate();

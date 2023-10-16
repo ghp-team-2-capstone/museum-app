@@ -14,7 +14,7 @@
   flex-direction: row-reverse;
   font-size: 3rem;
   color: white;
-  background-image: url('../Images/rousseaudream.png');
+  background-image: url('/Images/rousseaudream.png');
   padding: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 3rem;
@@ -25,7 +25,7 @@
   flex-direction: row-reverse;
   font-size: 3rem;
   color: white;
-  background-image: url('../Images/vangoghroses.png');
+  background-image: url('/Images/vangoghroses.png');
   padding: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 3rem;
@@ -36,7 +36,7 @@
   flex-direction: row-reverse;
   font-size: 3rem;
   color: white;
-  background-image: url('../Images/nighthawkshopper.png');
+  background-image: url('/Images/nighthawkshopper.png');
   padding: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 3rem;
@@ -363,7 +363,7 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-image: url("../images/skyline.jpg");
+  background-image: url("Images/skyline.jpg");
   background-size: cover;
   background-position: center;
   opacity: 0.5;
