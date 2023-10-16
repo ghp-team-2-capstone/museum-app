@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { fetchReviewsByUserId, deleteReview } from "../../helpers/fetching";
 import StarRating from "../Reviews/StarRating";
 import EditReview from "../Reviews/EditReview";
@@ -8,6 +9,8 @@ export default function UserReviews({ userId, token }) {
   const [reviews, setReviews] = useState([]);
   const [selectedReview, setSelectedReview] = useState(null);
   const [error, setError] = useState(null);
+
+  const navigate = useNavigate();
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -71,7 +74,17 @@ export default function UserReviews({ userId, token }) {
       </div>
       <div className="journal-entries-container user-reviews-container">
         {reviews.length === 0 ? (
-          <p>No reviews available</p>
+          <div className="empty-reviews-page">
+            <p className="empty-review-title">No reviews available.</p>
+            <button
+              className="museum-btn"
+              onClick={() => {
+                navigate("/museums");
+              }}
+            >
+              Leave a review
+            </button>
+          </div>
         ) : (
           reviews.map((review) => (
             <div

@@ -245,7 +245,7 @@
   text-align: center;
 }
 
-.favorites-museum-btn {
+.museum-btn {
   background-color: #031926;
   color: white;
   border: none;
@@ -264,6 +264,14 @@
   background-size: 200% 200%;
   animation: shimmer 6s linear infinite;
   color: #fff;
+}
+
+.empty-reviews-page {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 /* AUTH FORMS */
