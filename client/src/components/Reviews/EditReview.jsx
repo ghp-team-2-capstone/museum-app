@@ -15,6 +15,7 @@ export default function EditReview({
   const [newRating, setNewRating] = useState("");
   const [newBody, setNewBody] = useState("");
   const [error, setError] = useState(null);
+  const [username, setUsername] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,6 +24,7 @@ export default function EditReview({
         const review = await fetchSingleReview(reviewId);
         setNewRating(review.rating);
         setNewBody(review.body);
+        setUsername(review.username);
       } catch (error) {
         setError("Failed to fetch review data. Please try again later.");
       }

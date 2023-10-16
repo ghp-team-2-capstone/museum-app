@@ -24,7 +24,7 @@ export default function Home() {
         }}
         className="home-btn"
       >
-        <span>New here? Create an account!</span>
+        <span className="new-btn">New here? Create an account!</span>
       </button>
     </div>
   );

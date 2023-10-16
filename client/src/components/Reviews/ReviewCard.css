@@ -1,32 +1,81 @@
 /* ReviewCard.css - Styled as Journal Entry Cards and EditReview.css */
 
 /* Styles for player cards and the edit-review container */
-.player-card, .edit-review-container {
+.player-card {
+  border: 1px solid #ddd;
+  background-color: #ffffff97;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.edit-review-container {
     border: 1px solid #ddd;
-    background-color: #fff;
+    background-color: #ffffff97;
     margin: 20px 0;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+    width: 100%;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    text-align: center;
+  }
+
+  .edit-review-container h2 {
+    font-size: 1.5rem;
+    font-weight: bold; 
+    color:#283f3b;
+  }
+
+  .edit-review-container label {
+    font-weight: bold;
+  }
 
 .player-card-content {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Styles for star rating component with green stars */
 .star-rating {
-    background-image: linear-gradient(90deg, #99DDC8, #659B5E, #95BF74, #556F44, #99DDC8);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: solid;
+  background-image: linear-gradient(
+    90deg,
+    #99ddc8,
+    #659b5e,
+    #95bf74,
+    #556f44,
+    #99ddc8
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: solid;
 }
 
-.review-body, .edit-review-textarea {
-    font-size: 1rem;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.review-title {
+    font-size: 1.5rem;
+    font-weight: bold; 
+    color: #283f3b; 
+  }
+
+.review-body,
+.edit-review-textarea {
+  font-size: 1rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.review-username,
+.review-date {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-top: 5px;
 }
 
 .edit-review-title {
@@ -35,174 +84,210 @@
 }
 
 .review-date {
-    font-size: 0.8rem;
-    color: #777;
+  font-size: 0.8rem;
+  color: #777;
 }
 
 .review-username {
-    font-size: 1rem;
-    font-weight: bold;
-    margin-top: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #283f3b;
+}
+
+.averageRating-review {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.averageRating-review h2 {
+  margin-bottom: 10px; /* Add space between the title and content */
+}
+
+.museum-link-single:hover {
+  color: #556f44;
 }
 
 /* Styles for buttons with green stars and made to look exactly the same */
-.edit-review-button, .delete-review-button, .new-button, .cancel-button {
-    background-color: #34495e;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-    position: relative;
-    overflow: hidden;
+.edit-review-button,
+.delete-review-button,
+.new-button,
+.cancel-button {
+  background-color: #283F3B;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
 }
 
+button.cancel-button {
+  background-color: #283F3B;
+}
 
 /* Glimmering effect with changing colors */
-.edit-review-button:hover, .delete-review-button:hover, .new-button:hover, .cancel-button:hover {
-    background: linear-gradient(45deg, #99DDC8, #659B5E, #95BF74, #556F44);
-    background-size: 200% 200%;
-    animation: shimmer 6s linear infinite;
-    color: #fff;
+.edit-review-button:hover,
+.delete-review-button:hover,
+.new-button:hover,
+.cancel-button:hover {
+  background: linear-gradient(45deg, #99ddc8, #659b5e, #95bf74, #556f44);
+  background-size: 200% 200%;
+  animation: shimmer 6s linear infinite;
+  color: #fff;
 }
 
 @keyframes shimmer {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 200% 0;
-    }
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 /* Styles for the create review textarea */
+.create-review {
+  background: linear-gradient(90deg, #556f44be, #f4e9cd, #99ddc894);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 40px 0;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  width: 100%;
+}
+
 .create-review-container {
-    margin-top: 16px;
+  margin-top: 16px;
 }
 
 .create-review-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    min-height: 200px; /* Increase the height as needed */
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  min-height: 200px; /* Increase the height as needed */
 }
 
 .create-review-button {
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    padding: 12px 24px;
-    font-size: 1rem;
-    margin-top: 16px;
-    cursor: pointer;
-    border-radius: 5px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  margin-top: 16px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 /* Glimmering effect with changing colors */
 .create-review-button:hover {
-    background: linear-gradient(45deg, #99DDC8, #659B5E, #95BF74, #556F44);
-    background-size: 200% 200%;
-    animation: shimmer 2s linear infinite;
-    color: #fff;
+  background: linear-gradient(45deg, #99ddc8, #659b5e, #95bf74, #556f44);
+  background-size: 200% 200%;
+  animation: shimmer 2s linear infinite;
+  color: #fff;
 }
 
 @keyframes shimmer {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 200% 0;
-    }
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 /* Error message styling */
 .error-message {
-    color: #d9534f;
-    margin-top: 10px;
-    font-weight: bold;
+  color: #d9534f;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 /* Styling for the title and body inputs */
 .form-input {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .form-input label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-.form-input input[type="text"], .form-input textarea, .edit-review-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+.form-input input[type="text"],
+.form-input textarea,
+.edit-review-textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
 /* Style for the button container */
 .button-container {
-    display: flex;
-    justify-content: flex-end; /* Align buttons to the right */
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
 }
-
-
-
-
-
-
 
 /* CreateReview.css */
 .create-review {
-    background: linear-gradient(90deg, #556f44be, #F4E9CD, #99ddc894);
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 40px 0;
-    text-align: center;
-    color: black;
-    font-weight: bold;
+  background: linear-gradient(90deg, #556f44be, #f4e9cd, #99ddc894);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 40px 0;
+  text-align: center;
+  color: black;
+  font-weight: bold;
 }
 
 .create-review-title {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
 .create-review-rating {
-    font-weight: bold;
-    margin-bottom: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .create-review-form {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .create-review-textarea {
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
 .create-review-button {
-    background: linear-gradient(45deg, #468189, #659B5E, #95BF74, #556F44);
-    color: black;
-    border: none;
-    padding: 15px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+  background: linear-gradient(45deg, #468189, #659b5e, #95bf74, #556f44);
+  color: black;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .create-review-button:hover {
-    background: #556f445b; /* Set to the desired color with no hover animation */
+  background: #556f445b; /* Set to the desired color with no hover animation */
+}
+
+.no-reviews {
+  color: #464646;
+  padding: 10px;
 }

@@ -57,7 +57,7 @@ export default function FavoriteMuseum({ userId, museumId, token }) {
   };
 
   return (
-    <div>
+    <div className="favorite-museum">
       {isFavorite ? (
         <>
           <div className="heart-container">
