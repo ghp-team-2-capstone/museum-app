@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logOut, selectIsLoggedIn } from "../../Redux/authSlice";
 import "./Navbar.css";
-import logo from ".././images/logo.png";
+// import logo from ".././images/logo.png";
 import { resetFavorites } from "../../Redux/favoriteSlice";
 import Dropdown from "./Dropdown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -38,7 +38,7 @@ function Navbar({ token }) {
       <nav className="navbar">
         <div className="top-nav">
           <img
-            src={logo}
+            src="/Images/logo.png"
             alt="Logo"
             className="logo"
             onClick={() => navigate("/")}
