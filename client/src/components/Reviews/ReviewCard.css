@@ -281,3 +281,8 @@ button.cancel-button {
 .create-review-button:hover {
   background: #556f445b; /* Set to the desired color with no hover animation */
 }
+
+.no-reviews {
+  color: #464646;
+  padding: 10px;
+}

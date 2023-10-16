@@ -89,12 +89,11 @@
 
 /* Style the museum images within the card */
 .museum-image {
-  max-width: 300px;
+  width: 100%;
   height: auto;
   transition: transform 0.2s, box-shadow 0.2s;
   float: left;
-  margin: 1rem;
-
+  margin-bottom: 1em;
 }
 
 /* Add a subtle zoom effect on hover for the museum image */
@@ -111,6 +110,10 @@
   /* Adjust the font size as needed */
   margin-bottom: 10px;
   /* Add margin below the museum name */
+}
+
+.museum-description {
+  text-align: justify;
 }
 
 /* Style the Learn More link */
