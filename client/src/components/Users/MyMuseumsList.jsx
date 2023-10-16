@@ -40,7 +40,7 @@ export default function MyMuseumsList({ userId, token }) {
           <div className="empty-favorites-page">
             <p className="empty-favorites-title">No favorite museums yet.</p>
             <button
-              className="favorites-museum-btn"
+              className="museum-btn"
               onClick={() => {
                 navigate("/museums");
               }}
