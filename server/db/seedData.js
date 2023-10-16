@@ -181,7 +181,7 @@ const museums = [
     type: "academic",
     lat: 40.5741,
     lng: - 73.9823,
-  },  
+  },
   {
     museumName: "Gracie Mansion Conservancy",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxhetme7zPby57DFdau7FzDf7CkcKxtr8log&usqp=CAU",
@@ -191,7 +191,7 @@ const museums = [
     type: "academic",
     lat: 40.7779,
     lng: - 73.9430,
-  },  
+  },
   {
     museumName: "King Manor Museum",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHqHiqqdr1kK5PDtT2LdslPeJcZ5l1jZTsvw&usqp=CAU",
@@ -201,7 +201,7 @@ const museums = [
     type: "academic",
     lat: 40.7018,
     lng: - 73.8072,
-  },  
+  },
   {
     museumName: "Dia Art Foundation",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdcc_2cdOEkHSLvDuzutSi2kvE4dpMnjdvJg&usqp=CAU",
@@ -211,17 +211,17 @@ const museums = [
     type: "art",
     lat: 40.7497,
     lng: -  74.0067,
-  }, 
-   {
+  },
+  {
     museumName: "Neue Galerie",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVKNd3S8YEdNMtFqc7XGxXKq4o3gxXi9DqjA&usqp=CAU",
     description:
       "The Neue Galerie New York is a distinguished museum in Manhattan that specializes in early 20th-century German and Austrian art and design. It features an exceptional collection of works by renowned artists like Gustav Klimt and Egon Schiele, as well as decorative arts and design objects from the same era. The museum offers a captivating journey through the vibrant and innovative art movements of the early 1900s.",
     link: "https://www.neuegalerie.org/",
     type: "art",
-    lat:  40.7811,
+    lat: 40.7811,
     lng: - 73.9635,
-  }, 
+  },
   {
     museumName: "Jackie Robinson Museum",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnyLYAdTvHkC5pcHBq8JhsW1X_mjqzFHWcWA&usqp=CAU",
@@ -231,7 +231,7 @@ const museums = [
     type: "academic",
     lat: 40.8206,
     lng: - 73.9469,
-  },  
+  },
   {
     museumName: "Waterfront Barge Museum",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7L8xIv3DliKUuLl4j0BXlkjky1GBjkQdhHg&usqp=CAU",
@@ -241,7 +241,7 @@ const museums = [
     type: "academic",
     lat: 40.6727,
     lng: - 74.0064,
-  },  
+  },
   {
     museumName: "Frick Collection",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThSzr3v5uPQhi0ARlf_pCU9v5JiFcyeoFMlw&usqp=CAU",
@@ -251,7 +251,8 @@ const museums = [
     type: "art",
     lat: 40.7711,
     lng: - 73.9672,
-  }, 
+  },
+
 ];
 
 const reviews = [
