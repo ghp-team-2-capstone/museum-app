@@ -3,15 +3,12 @@ import "./Navbar.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Dropdown = () => {
+const Dropdown = ({ closeSidebar }) => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
     setOpen(!open);
   };
-  // const handleClose = () => {
-  //   setOpen(false);
-  // };
 
   return (
     <div className="dropdown">
@@ -24,7 +21,7 @@ const Dropdown = () => {
           <li>
             <Link
               to="/profile/journal"
-              // onClick={handleClose}
+              onClick={closeSidebar}
               className="nav-anchor"
             >
               Journal
@@ -33,7 +30,7 @@ const Dropdown = () => {
           <li>
             <Link
               to="/profile/reviews"
-              // onClick={handleClose}
+              onClick={closeSidebar}
               className="nav-anchor"
             >
               Reviews
@@ -42,7 +39,7 @@ const Dropdown = () => {
           <li>
             <Link
               to="/profile/favorites"
-              // onClick={handleClose}
+              onClick={closeSidebar}
               className="nav-anchor"
             >
               Favorites

@@ -188,6 +188,8 @@
   }
 }
 
+
+
 /* ALL MUSEUMS SEARCH */
 .search-museums-container {
   display: flex;
@@ -350,4 +352,23 @@
 
 .button-container {
   margin-top: auto;
+}
+
+/* RESPONSIVE STYLING */
+
+@media screen and (max-width: 600px) {
+  .page-header {
+    padding-right: 0;
+    width: 100%;
+    top: 10rem;
+  }
+
+
+
+  .museum-item {
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
+  }
+
 }

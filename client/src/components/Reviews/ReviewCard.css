@@ -78,6 +78,11 @@
   margin-top: 5px;
 }
 
+.edit-review-title {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
 .review-date {
   font-size: 0.8rem;
   color: #777;

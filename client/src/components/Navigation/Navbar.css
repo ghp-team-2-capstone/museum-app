@@ -1,6 +1,12 @@
 /* Navbar CSS */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .navbar-container {
-  z-index: 1;
+  z-index: 3;
   min-height: 100vh;
   width: 15vw;
   background: #283f3b;
@@ -26,6 +32,7 @@
   color: white;
   font-size: 1.5rem;
   margin-top: 0.5rem;
+  text-align: center;
 }
 
 .nav-links {
@@ -69,6 +76,10 @@
   left: calc(100% + 1rem);
 }
 
+.menu-button {
+  display: none;
+}
+
 /* Home.css */
 
 .quote {
@@ -84,6 +95,74 @@
   font-family: "Your Gorgeous Font", sans-serif;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.home-btn {
+  position: fixed;
+  bottom: 0;
+  left: 15%;
+  padding: 10px;
+  color: #f5f6f1;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-family: "Your Gorgeous Font", sans-serif;
+  border: none;
+
+}
+
+span{
+  display: block;
+  /* padding: 25px 80px; */
+}
+.home-btn::before, .home-btn::after{
+  content:"";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: #fff;
+}
+
+span::before, span::after{
+  content:"";
+  width:2px;
+  height:0;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: #fff;
+}
+
+.home-btn::after{
+  left:0;
+  bottom: 0;
+  transition-duration: 0.4s;
+}
+.home-btn span::after{
+  right:0;
+  top: 0;
+  transition-duration: 0.4s;
+}
+.home-btn::before{
+  right: 0;
+  top: 0;
+  transition-duration: 0.4s;
+}
+.home-btn span::before{
+  left: 0;
+  bottom: 0;
+  transition-duration: 0.4s;
+
+}
+
+.home-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+button:hover::before, button:hover::after{
+  width: 100%;
+}
+button:hover span::before, button:hover span::after{
+  height: 100%;
 }
 
 
@@ -121,7 +200,6 @@
   margin-top: 5rem;
   color: #f4e9cd;
   position: relative;
-  overflow: hidden;
 }
 
 .auth-btn::before {
@@ -140,4 +218,138 @@
 .auth-btn:hover::before,
 .auth-btn:focus::before {
   transform: scaleX(1);
+}
+
+.sidebar {
+  display: none;
+}
+
+/* RESPONSIVE STYLING  */
+
+/* @media screen and (max-width: 400px) { */
+  @media screen and (max-width: 600px) {
+
+  .side-navbar {
+      display: none;
+  }
+
+  .navbar-container {
+    width: 100%;
+    /* position: fixed; */
+    background: none;
+    top: 0;
+    left: 0;
+  }
+
+    .top-nav {
+    background: #283f3b;
+    z-index: 5;
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+
+  /* .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  } */
+
+  .logo {
+    width: 18vw;
+    margin: 0;
+  }
+
+.navbar-title {
+  font-size: 2.5rem;
+  /* text-align: center; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 50px;
+  flex: 1;
+  margin: 0;
+}
+
+  .menu-button {
+    display: flex;
+    padding: 10px;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+  }
+
+
+
+  .nav-links>li {
+    margin: 1rem 0;
+  }
+
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    top: -100%;
+    width: 100%;
+    height: 100vh;
+    background: #283f3b;
+    z-index: 1;
+    transition: top 0.3s ease;
+    padding: 20px;
+
+  }
+
+
+  .sidebar.active {
+    top: 4rem;
+  }
+
+  .nav-anchor {
+    font-size: 1.5rem;
+  }
+
+  .auth-btn {
+    font-size: 1.5rem;
+    position: fixed;
+    bottom: 5rem;
+    left: 0;
+    width: 100%;
+  }
+
+  .auth-btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: #f4e9cd;
+    transform: scaleX(0);
+    transform-origin: 0 100% ;
+    transition: transform 300ms ease-in-out;
+  }
+
+  .auth-btn:hover::before,
+  .auth-btn:focus::before {
+    transform: scaleX(1);
+  }
+
+  .quote {
+    z-index: -1;
+    font-size: 24px;
+  }
 }

@@ -121,17 +121,21 @@ export default function Login() {
             <input
               autoFocus
               placeholder="username"
+              id="username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
             <input
               type="password"
               placeholder="password"
+              id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
 
-            <button type="submit">Submit</button>
+            <button className="login-btn" type="submit">
+              Submit
+            </button>
           </form>
           <button className="link-button" onClick={() => nav("/register")}>
             Don't have an account? Register here.
