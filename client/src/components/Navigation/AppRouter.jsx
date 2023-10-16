@@ -6,7 +6,6 @@ import UserProfile from "../Users/UserProfile";
 import Logout from "../Users/Logout";
 import Register from "../Users/Register";
 import Login from "../Users/Login";
-// import Auth from "../Users/Auth";
 import Navbar from "./NavBar";
 import GetSingleMuseum from "../Museums/GetSingleMuseum";
 import MyMuseumsList from "../Users/MyMuseumsList";
