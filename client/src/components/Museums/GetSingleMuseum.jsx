@@ -34,6 +34,9 @@ export default function GetSingleMuseum({ token, userId }) {
 
   return (
     <div className="single-museum-page">
+      <div className="page-header-single-museum">
+        <h1>{museum.museumName}</h1>
+      </div>
       {/* MUSEUM DETAILS  */}
       {error ? (
         <p>{error}</p>
@@ -48,7 +51,7 @@ export default function GetSingleMuseum({ token, userId }) {
               />
             )}
           </div>
-          <h3 className="museum-headers">{museum.museumName}</h3>
+          {/* <h3 className="museum-headers">{museum.museumName}</h3> */}
           <p>{museum.description}</p>
           <img
             src={museum.image}
