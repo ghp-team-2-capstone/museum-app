@@ -60,7 +60,7 @@ export default function GetSingleMuseum({ token, userId }) {
               href={museum.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="museum-link"
+              className="museum-link-single"
             >
               Learn More
             </a>

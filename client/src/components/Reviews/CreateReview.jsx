@@ -34,7 +34,8 @@ export default function CreateReview({ setReviews, museumId, token, userId }) {
 
       setRating(0);
       setBody("");
-
+      setError(null); 
+      
       navigate("./", { replace: true }); // Use the navigate function to redirect
 
     } catch (error) {

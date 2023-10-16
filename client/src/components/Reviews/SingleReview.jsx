@@ -76,7 +76,7 @@ export default function SingleReview({ museumId, token, userId }) {
 
   return (
     <>
-      <div className="averageRating">
+      <div className="averageRating-review">
         <AverageRating museumId={museumId} reviews={reviews} />
       </div>
 
