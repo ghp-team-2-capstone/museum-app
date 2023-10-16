@@ -49,13 +49,11 @@ export default function EditReview({
       if (editedReview) {
         onUpdateReview(editedReview);
         onCancel();
-        setError(null);
       } else {
         console.error("Failed to update review.");
       }
     } catch (error) {
       console.error("Error updating review", error);
-      setError("Failed to update the review. Please try again.");
     }
   };
 
