@@ -112,6 +112,146 @@ const museums = [
     lat: 40.7925,
     lng: -73.9519,
   },
+  {
+    museumName: "The MET Cloisters",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTAjd95UIiQLnIZs4DDh_-vu2469uN1POaRQ&usqp=CAU",
+    description:
+      "The Cloisters is a branch of the Metropolitan Museum of Art in New York City dedicated to medieval European art and architecture. It's designed to look like a medieval monastery and features a remarkable collection of art and artifacts from the Middle Ages. The museum's peaceful setting and gardens provide a unique and serene experience for visitors.",
+    link: "https://www.metmuseum.org/visit/plan-your-visit/met-cloisters",
+    type: "art",
+    lat: 40.8649,
+    lng: - 73.9312,
+  },
+  {
+    museumName: "The Statue of Liberty Museum",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6hACP-dlyYoYdkZkrxTVpxZFdD0nY7uCKpA&usqp=CAU",
+    description:
+      "The Statue of Liberty Museum, located on Liberty Island in New York Harbor, is a captivating museum dedicated to the iconic symbol of freedom and democracy: the Statue of Liberty. It features engaging exhibits and historical artifacts that chronicle the statue's origin, construction, and its enduring role in American history and immigration. Visitors can explore the museum to gain a deeper understanding of the statue's cultural significance and the values it represents.",
+    link: "https://www.statueofliberty.org/statue-of-liberty/statue-of-liberty-museum/?gclid=CjwKCAjw-KipBhBtEiwAWjgwrPVF15rZ8hB81HblpAmKQv13TP-Es1BXQeXeONBKr1WypXSYugO8wRoCogQQAvD_BwE",
+    type: "academic",
+    lat: 40.6910,
+    lng: - 74.0461,
+  },
+  {
+    museumName: "The Noguchi Museum",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9F98MonOhCiKl6exAB1_aRUic0Zi1inh-HA&usqp=CAU",
+    description:
+      "The Noguchi Museum and Garden, located in Long Island City, New York, is a unique space dedicated to the works of Isamu Noguchi, a prominent Japanese-American sculptor and artist. The museum showcases Noguchi's sculptures, designs, and his innovative approach to art and design. The serene outdoor garden complements the indoor displays, providing a tranquil environment for visitors to appreciate the fusion of art, sculpture, and nature.",
+    link: "https://www.noguchi.org/",
+    type: "art",
+    lat: 40.7668,
+    lng: - 73.9381,
+  },
+  {
+    museumName: "Bartow-Pell Mansion Museum",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaUBHBbs6g7dqllZVfu_oHhRY92gr8VuaPEg&usqp=CAU",
+    description:
+      "The Bartow-Pell Mansion Museum, nestled in Pelham Bay Park in the Bronx, New York, is a historic gem. This 19th-century mansion, surrounded by lush gardens, offers visitors a glimpse into the elegance and charm of the past. It features art, architecture, and period furnishings, making it a delightful destination for history and architecture enthusiasts.",
+    link: "https://www.bartowpellmansionmuseum.org/",
+    type: "art",
+    lat: 40.8716,
+    lng: - 73.8052,
+  },
+  {
+    museumName: "Asia Society Museum",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx3YGwItAeLgf4MnlZ1Zjm-0OcOq-0fsGzKQ&usqp=CAU",
+    description:
+      "The Bartow-Pell Mansion Museum, nestled in Pelham Bay Park in the Bronx, New York, is a historic gem. This 19th-century mansion, surrounded by lush gardens, offers visitors a glimpse into the elegance and charm of the past. It features art, architecture, and period furnishings, making it a delightful destination for history and architecture enthusiasts.",
+    link: "https://asiasociety.org/museum",
+    type: "academic",
+    lat: 40.7684,
+    lng: - 73.9655,
+  },
+  {
+    museumName: "Museum Of Sex",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA-iPlVuQtKCEqBkj59bNYhlg8hFOfOj1pTA&usqp=CAU",
+    description:
+      "The Museum of Sex, situated in New York City, is a unique and provocative museum dedicated to exploring human sexuality through various exhibits, art, and educational displays. It offers a candid and thought-provoking perspective on this often-taboo topic, making it an intriguing destination for those interested in human relationships and culture.",
+    link: "https://www.museumofsex.com/",
+    type: "other",
+    lat: 40.7440,
+    lng: - 73.9874,
+  },
+  {
+    museumName: "Coney Island Museum",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTqJMMP_XzNO78uszdMTAOS4DPO0pDKn5UMw&usqp=CAU",
+    description:
+      "The Coney Island Museum, located in the famous Coney Island of Brooklyn, New York, is a place where visitors can explore the rich history and unique culture of this iconic amusement destination. It features a collection of artifacts, exhibits, and memorabilia that celebrate the vibrant past and present of Coney Island, making it a fascinating destination for history and amusement park enthusiasts.",
+    link: "https://www.coneyislandmuseum.org/",
+    type: "academic",
+    lat: 40.5741,
+    lng: - 73.9823,
+  },  
+  {
+    museumName: "Gracie Mansion Conservancy",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxhetme7zPby57DFdau7FzDf7CkcKxtr8log&usqp=CAU",
+    description:
+      "Gracie Mansion, located in Manhattan, New York City, serves as the official residence of the city's mayor. This historic mansion, set in a picturesque park, has a rich history and serves as an important symbol of civic leadership and public events in the city.",
+    link: "https://www.graciemansion.org/",
+    type: "academic",
+    lat: 40.7779,
+    lng: - 73.9430,
+  },  
+  {
+    museumName: "King Manor Museum",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHqHiqqdr1kK5PDtT2LdslPeJcZ5l1jZTsvw&usqp=CAU",
+    description:
+      "The King Manor Museum in Queens, New York City is a historic treasure. It was once the home of Rufus King, a Founding Father and early American statesman. The museum offers a glimpse into the life and times of the early United States, featuring exhibits and artifacts showcasing this important period in American history.",
+    link: "https://www.kingmanor.org/",
+    type: "academic",
+    lat: 40.7018,
+    lng: - 73.8072,
+  },  
+  {
+    museumName: "Dia Art Foundation",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdcc_2cdOEkHSLvDuzutSi2kvE4dpMnjdvJg&usqp=CAU",
+    description:
+      "The Dia Art Foundation in Chelsea, New York City, is a renowned cultural institution. It's dedicated to showcasing avant-garde contemporary art, often in unconventional and immersive ways, offering visitors a unique and thought-provoking art experience.",
+    link: "https://www.diaart.org/",
+    type: "art",
+    lat: 40.7497,
+    lng: -  74.0067,
+  }, 
+   {
+    museumName: "Neue Galerie",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVKNd3S8YEdNMtFqc7XGxXKq4o3gxXi9DqjA&usqp=CAU",
+    description:
+      "The Neue Galerie New York is a distinguished museum in Manhattan that specializes in early 20th-century German and Austrian art and design. It features an exceptional collection of works by renowned artists like Gustav Klimt and Egon Schiele, as well as decorative arts and design objects from the same era. The museum offers a captivating journey through the vibrant and innovative art movements of the early 1900s.",
+    link: "https://www.neuegalerie.org/",
+    type: "art",
+    lat:  40.7811,
+    lng: - 73.9635,
+  }, 
+  {
+    museumName: "Jackie Robinson Museum",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnyLYAdTvHkC5pcHBq8JhsW1X_mjqzFHWcWA&usqp=CAU",
+    description:
+      "The Jackie Robinson Museum, situated in New York City, is a tribute to the life and legacy of Jackie Robinson, the first African American to play in Major League Baseball. This museum tells the inspiring story of his achievements, contributions to the civil rights movement, and his impact on sports and society. Visitors can explore exhibits, memorabilia, and interactive displays, gaining a deeper understanding of this pioneering figure in American history.",
+    link: "https://www.jackierobinsonmuseum.org/",
+    type: "academic",
+    lat: 40.8206,
+    lng: - 73.9469,
+  },  
+  {
+    museumName: "Waterfront Barge Museum",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7L8xIv3DliKUuLl4j0BXlkjky1GBjkQdhHg&usqp=CAU",
+    description:
+      "The Waterfront Barge Museum in Red Hook, Brooklyn, is a fascinating maritime museum. It showcases the history and heritage of New York's working waterfront through a collection of historic ships, artifacts, and exhibits. Visitors can explore the barge and learn about the city's maritime past, making it a unique destination for those interested in the maritime history of New York.",
+    link: "https://waterfrontmuseum.org/",
+    type: "academic",
+    lat: 40.6727,
+    lng: - 74.0064,
+  },  
+  {
+    museumName: "Frick Collection",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThSzr3v5uPQhi0ARlf_pCU9v5JiFcyeoFMlw&usqp=CAU",
+    description:
+      "The Frick Collection, nestled in the heart of Manhattan, is a renowned art museum housed in the former residence of industrialist Henry Clay Frick. The museum features a superb collection of European art, including works by Old Masters, Renaissance paintings, and decorative arts. Its intimate and elegant setting provides an exceptional environment for art enthusiasts to admire these masterpieces in a unique and historic context.",
+    link: "https://www.frick.org/",
+    type: "art",
+    lat: 40.7711,
+    lng: - 73.9672,
+  }, 
 ];
 
 const reviews = [
