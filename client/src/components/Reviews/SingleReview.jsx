@@ -101,11 +101,11 @@ export default function SingleReview({ museumId, token, userId }) {
               onRatingChange={() => {}}
               disableHover={true}
             />
-            <p className="review-body">{review.body}</p>
-            <p className="review-date">{formatDate(review.date)}</p>
-            <div>
+            <div className="review-content">
               <p className="review-username">{review.username}</p>
+              <p className="review-date">{formatDate(review.date)}</p>
             </div>
+            <p className="review-body">{review.body}</p>
 
             {token && userId === review.userId && (
               <div className="review-actions">

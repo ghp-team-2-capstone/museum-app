@@ -37,6 +37,13 @@
     margin-bottom: 10px;
 }
 
+.review-username, .review-date {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+
 .review-date {
     font-size: 0.8rem;
     color: #777;
@@ -45,7 +52,6 @@
 .review-username {
     font-size: 1rem;
     font-weight: bold;
-    margin-top: 10px;
 }
 
 /* Styles for buttons with green stars and made to look exactly the same */
