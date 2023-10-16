@@ -108,7 +108,7 @@
 .delete-review-button,
 .new-button,
 .cancel-button {
-  background-color: #34495e;
+  background-color: #283F3B;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -118,6 +118,10 @@
   transition: background-color 0.3s ease-in-out;
   position: relative;
   overflow: hidden;
+}
+
+button.cancel-button {
+  background-color: #283F3B;
 }
 
 /* Glimmering effect with changing colors */

@@ -28,7 +28,7 @@
 .details-button,
 .learn-more-button,
 .museum-buttons {
-  background-color: #031926;
+  background-color: #283F3B;
   /* Button background color */
   color: white;
   /* Button text color */
@@ -117,7 +117,7 @@
 .museum-link {
   text-decoration: none;
   /* Remove underline from the link */
-  color: #031926;
+  color: #283F3B;
   /* Link color */
   margin-right: 10px;
   /* Add margin to separate it from other content */
@@ -125,7 +125,7 @@
 
 /* Style the Back to Map button */
 .museum-buttons {
-  background-color: #031926;
+  background-color: #283F3B;
   /* Button background color */
   color: white;
   /* Button text color */
