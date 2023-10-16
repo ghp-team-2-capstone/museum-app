@@ -31,8 +31,11 @@ export default function MyMuseumsList({ userId, token }) {
 
   return (
     <>
+      <div className="page-header-favorite-museums">
+        <h1>My Favorite Museums</h1>
+      </div>
       <div className="favorites-container">
-        <h1 className="favorite-title">My Favorite Museums</h1>
+        {/* <h1 className="favorite-title">My Favorite Museums</h1> */}
         {favoriteMuseumsData.length === 0 ? (
           <div className="empty-favorites-page">
             <p className="empty-favorites-title">No favorite museums yet.</p>

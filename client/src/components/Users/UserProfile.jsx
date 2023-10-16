@@ -6,6 +6,7 @@ import {
   deleteJournalEntry,
 } from "../../helpers/fetching";
 import "./JournalEntries.css";
+import Spinner from "../Loading/Spinner";
 
 export default function JournalEntries({ token, userId }) {
   const [journalEntries, setJournalEntries] = useState([]);
@@ -116,139 +117,130 @@ export default function JournalEntries({ token, userId }) {
   );
 
   return (
-    <div className="journal-entries-container">
-      <h1>Journal Entries</h1>
-      {error && <p className="error-message">{error}</p>}
-      <div className="search-bar">
-        <input
-          type="text"
-          placeholder="Search entries..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
+    <>
+      <div className="page-header-journal">
+        <h1>My Journal</h1>
       </div>
-      <ul className="journal-entry-list">
-        {filteredEntries.map((entry) => (
-          <li key={entry.entryId} className="journal-entry-card">
-            {editingEntry?.entryId === entry.entryId ? (
-              <div className="edit-entry-form">
-                <h2>Edit Journal Entry</h2>
-                <input
-                  type="text"
-                  value={editingEntry.title}
-                  onChange={(e) =>
-                    setEditingEntry({
-                      ...editingEntry,
-                      title: e.target.value,
-                    })
-                  }
-                />
-                <textarea
-                  value={editingEntry.body}
-                  onChange={(e) =>
-                    setEditingEntry({
-                      ...editingEntry,
-                      body: e.target.value,
-                    })
-                  }
-                />
-                <button className="save-button" onClick={saveEditedEntry}>
-                  Save
-                </button>
-                <button
-                  className="cancel-button"
-                  onClick={() => setEditingEntry(null)}
-                >
-                  Cancel
-                </button>
-              </div>
-            ) : (
-              <div className="view-entry">
-                <h2>{entry.title}</h2>
-                <p>{entry.body}</p>
-                <p>Date: {formatDate(entry.date)}</p>
-                {token && (
-                  <div className="action-buttons">
-                    <button
-                      className="delete-button"
-                      onClick={() => handleDeleteEntry(entry.entryId)}
-                    >
-                      Delete
+      {filteredEntries.length === 0 ? (
+        <Spinner />
+      ) : (
+        <div className="journal-entries-container">
+          <h1>Journal Entries</h1>
+          {error && <p className="error-message">{error}</p>}
+          <div className="search-bar">
+            <input
+              type="text"
+              placeholder="Search entries..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
+          <ul className="journal-entry-list">
+            {filteredEntries.map((entry) => (
+              <li key={entry.entryId} className="journal-entry-card">
+                {editingEntry?.entryId === entry.entryId ? (
+                  <div className="edit-entry-form">
+                    <h2>Edit Journal Entry</h2>
+                    <input
+                      type="text"
+                      value={editingEntry.title}
+                      onChange={(e) =>
+                        setEditingEntry({
+                          ...editingEntry,
+                          title: e.target.value,
+                        })
+                      }
+                    />
+                    <textarea
+                      value={editingEntry.body}
+                      onChange={(e) =>
+                        setEditingEntry({
+                          ...editingEntry,
+                          body: e.target.value,
+                        })
+                      }
+                    />
+                    <button className="save-button" onClick={saveEditedEntry}>
+                      Save
                     </button>
                     <button
-                      className="edit-button"
-                      onClick={() => handleEditEntry(entry.entryId)}
+                      className="cancel-button"
+                      onClick={() => setEditingEntry(null)}
                     >
-                      Edit
+                      Cancel
                     </button>
                   </div>
+                ) : (
+                  <div className="view-entry">
+                    <h2>{entry.title}</h2>
+                    <p>{entry.body}</p>
+                    <p>Date: {formatDate(entry.date)}</p>
+                    {token && (
+                      <div className="action-buttons">
+                        <button
+                          className="delete-button"
+                          onClick={() => handleDeleteEntry(entry.entryId)}
+                        >
+                          Delete
+                        </button>
+                        <button
+                          className="edit-button"
+                          onClick={() => handleEditEntry(entry.entryId)}
+                        >
+                          Edit
+                        </button>
+                      </div>
+                    )}
+                  </div>
                 )}
-              </div>
-            )}
-          </li>
-        ))}
-      </ul>
-      <div className="create-entry-form">
-        <h2>Create New Journal Entry</h2>
-        {error && <p className="error-message">{error}</p>}
-        <div className="form-input">
-          <label htmlFor="entryTitle">Title</label>
-          <input
-            type="text"
-            id="entryTitle"
-            placeholder="Title"
-            value={newEntry.title}
-            onChange={(e) =>
-              setNewEntry({ ...newEntry, title: e.target.value })
-            }
-          />
+              </li>
+            ))}
+          </ul>
+          <div className="create-entry-form">
+            <h2>Create New Journal Entry</h2>
+            {error && <p className="error-message">{error}</p>}
+            <div className="form-input">
+              <label htmlFor="entryTitle">Title</label>
+              <input
+                type="text"
+                id="entryTitle"
+                placeholder="Title"
+                value={newEntry.title}
+                onChange={(e) =>
+                  setNewEntry({ ...newEntry, title: e.target.value })
+                }
+              />
+            </div>
+            <div className="form-input">
+              <label htmlFor="entryBody">Body</label>
+              <textarea
+                id="entryBody"
+                rows={5} // Adjust the number of rows as needed
+                placeholder="Body"
+                value={newEntry.body}
+                onChange={(e) =>
+                  setNewEntry({ ...newEntry, body: e.target.value })
+                }
+              />
+            </div>
+            <div className="form-input">
+              <label htmlFor="customDate">Custom Date (optional)</label>
+              <input
+                type="date"
+                id="customDate"
+                value={customDate}
+                onChange={(e) => setCustomDate(e.target.value)}
+              />
+            </div>
+            <button className="create-button" onClick={handleCreateEntry}>
+              Create
+            </button>
+          </div>
         </div>
-        <div className="form-input">
-          <label htmlFor="entryBody">Body</label>
-          <textarea
-            id="entryBody"
-            rows={5} // Adjust the number of rows as needed
-            placeholder="Body"
-            value={newEntry.body}
-            onChange={(e) =>
-              setNewEntry({ ...newEntry, body: e.target.value })
-            }
-          />
-        </div>
-        <div className="form-input">
-          <label htmlFor="customDate">Custom Date (optional)</label>
-          <input
-            type="date"
-            id="customDate"
-            value={customDate}
-            onChange={(e) => setCustomDate(e.target.value)}
-          />
-        </div>
-        <button className="create-button" onClick={handleCreateEntry}>
-          Create
-        </button>
-      </div>
-    </div>
+      )}
+    </>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React, { useState, useEffect } from "react";
 // import { useNavigate } from "react-router-dom";
@@ -469,4 +461,3 @@ export default function JournalEntries({ token, userId }) {
 //     </div>
 //   );
 // }
-

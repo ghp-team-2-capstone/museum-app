@@ -1,17 +1,28 @@
 /* AllMuseums.css */
 
-.page-header {
+.page-header-all-museums {
   display: flex;
   flex-direction: row-reverse;
   font-size: 3rem;
   color: white;
   background-image: url('../Images/monetpaint.png');
-  padding: 1rem;
+  padding: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.page-header h1 {
-  padding-left: 4rem;
+.page-header-single-museum {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 3rem;
+  color: white;
+  background-image: url('../Images/ophelia.png');
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+}
+
+.page-header-all-museums h1 {
+  padding-right: 4rem;
 }
 
 .all-museums-container {
@@ -28,7 +39,7 @@
 .details-button,
 .learn-more-button,
 .museum-buttons {
-  background-color: #031926;
+  background-color: #283F3B;
   /* Button background color */
   color: white;
   /* Button text color */
@@ -68,42 +79,36 @@
 }
 
 /* Style the museum list items */
-.museum-item {
+
+.museum-item-all {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* Center the content vertically */
   align-items: center;
-  /* Center the content horizontally */
   margin-bottom: 20px;
   margin-left: 20px;
-  /* Add margin between each museum card */
+  margin-right: 20px;
   border: 1px solid #ddd;
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  /* Add a subtle box shadow */
   transition: transform 0.2s;
-  /* Add a smooth transition effect */
   list-style: none;
 }
 
-
 /* Style the museum images within the card */
 .museum-image {
-  max-width: 300px;
+  width: 100%;
   height: auto;
   transition: transform 0.2s, box-shadow 0.2s;
   float: left;
-  margin: 1rem;
-
+  margin-bottom: 1em;
 }
 
-
 /* Add a subtle zoom effect on hover for the museum image */
-.museum-item:hover .museum-image {
+.museum-item-all:hover .museum-image {
   transform: scale(1.03);
   /* Slightly zoom in the image on hover */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -118,11 +123,15 @@
   /* Add margin below the museum name */
 }
 
+.museum-description {
+  text-align: justify;
+}
+
 /* Style the Learn More link */
 .museum-link {
   text-decoration: none;
   /* Remove underline from the link */
-  color: #031926;
+  color: #283F3B;
   /* Link color */
   margin-right: 10px;
   /* Add margin to separate it from other content */
@@ -130,7 +139,7 @@
 
 /* Style the Back to Map button */
 .museum-buttons {
-  background-color: #031926;
+  background-color: #283F3B;
   /* Button background color */
   color: white;
   /* Button text color */
@@ -190,15 +199,17 @@
   }
 }
 
+
+
 /* ALL MUSEUMS SEARCH */
 .search-museums-container {
   display: flex;
   justify-content: flex-end;
   position: relative;
   align-items: center;
-  margin-top: 0.5em;
+  margin-top: 1em;
   margin-right: 1em;
-  margin-bottom: 3em;
+  margin-bottom: 1em;
 }
 
 #search-museums-bar {
@@ -250,12 +261,70 @@
   padding-left: 10px;
 }
 
+/* SINGLE MUSEUMS PAGE  */
+.single-museum-page {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.single-museum-card {
+  display: flex;
+  align-items: flex-start;
+}
+
+.museum-headers-single {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #283F3B;
+  margin: 1em 0 20px;
+}
+
+.museum-image-single {
+  width: 100%;
+  height: auto; 
+  margin: 15px auto;
+  margin-top: 4em;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.museum-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.single-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
 /* FAVORITE BUTTON */
+
+.favorite-museum {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1vw;
+}
 
 .heart-container {
   display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   margin-left: auto;
   margin-top: 20px;
@@ -269,8 +338,8 @@
   cursor: pointer;
   width: 36px;
   height: 36px;
-  right: 0;
-  top: 50%;
+  left: 0;
+  top: 0;
   transform: translateY(-50%);
 }
 
@@ -283,9 +352,8 @@
   white-space: nowrap;
   overflow: hidden;
   position: absolute;
-  right: 24px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-77%);
 }
 
 .heart-button:hover+.favorite-text {
@@ -296,4 +364,23 @@
 
 .button-container {
   margin-top: auto;
+}
+
+/* RESPONSIVE STYLING */
+
+@media screen and (max-width: 600px) {
+  .page-header {
+    padding-right: 0;
+    width: 100%;
+    top: 10rem;
+  }
+
+
+
+  .museum-item {
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
+  }
+
 }

@@ -15,6 +15,7 @@ export default function EditReview({
   const [newRating, setNewRating] = useState("");
   const [newBody, setNewBody] = useState("");
   const [error, setError] = useState(null);
+  const [username, setUsername] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,6 +24,7 @@ export default function EditReview({
         const review = await fetchSingleReview(reviewId);
         setNewRating(review.rating);
         setNewBody(review.body);
+        setUsername(review.username);
       } catch (error) {
         setError("Failed to fetch review data. Please try again later.");
       }
@@ -56,8 +58,10 @@ export default function EditReview({
   };
 
   return (
-    <div className="edit-review-container"> {/* Apply edit-review-container class for styling */}
-      <h2>Edit Review</h2>
+    <div className="edit-review-container">
+      {" "}
+      {/* Apply edit-review-container class for styling */}
+      <h2 className="edit-review-title">Edit Your Review</h2>
       {error && <p className="error">{error}</p>}
       <br />
       <form onSubmit={handleEditReview}>
@@ -66,7 +70,6 @@ export default function EditReview({
           rating={newRating}
           onRatingChange={(newRating) => setNewRating(newRating)}
         />
-
         <label>Review Text: </label>
         <textarea
           className="edit-review-textarea" // Apply edit-review-textarea class for styling
@@ -75,19 +78,16 @@ export default function EditReview({
           value={newBody}
           onChange={(event) => setNewBody(event.target.value)}
         />
-        <button className="new-button" >Update</button> {/* Apply update-button class for styling */}
-        <button className="cancel-button" onClick={onCancel}>Cancel</button> {/* Apply cancel-button class for styling */}
+        <button className="new-button">Update</button>{" "}
+        {/* Apply update-button class for styling */}
+        <button className="cancel-button" onClick={onCancel}>
+          Cancel
+        </button>{" "}
+        {/* Apply cancel-button class for styling */}
       </form>
     </div>
   );
 }
-
-
-
-
-
-
-
 
 // import React, { useState, useEffect } from "react";
 // import { editReview, fetchSingleReview } from "../../helpers/fetching";

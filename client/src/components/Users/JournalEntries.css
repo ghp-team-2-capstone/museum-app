@@ -9,6 +9,51 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.page-header-journal {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 3rem;
+  color: white;
+  background-image: url('../Images/rousseaudream.png');
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+}
+
+.page-header-favorite-museums {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 3rem;
+  color: white;
+  background-image: url('../Images/vangoghroses.png');
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+}
+
+.page-header-my-reviews {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 3rem;
+  color: white;
+  background-image: url('../Images/nighthawkshopper.png');
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+}
+
+.page-header-journal h1 {
+  padding-right: 4rem;
+}
+
+.page-header-favorite-museums h1 {
+  padding-right: 4rem;
+}
+
+.page-header-my-reviews h1 {
+  padding-right: 4rem;
+}
+
 .journal-entry-list {
   list-style: none;
   padding: 0;
@@ -270,14 +315,14 @@
 }
 
 /* Auth Container Styles */
-.auth-container {
-  position: relative;
-  padding: 20px;
-  width: 75%;
-  margin: 50px 100px;
-  backdrop-filter: blur(10px);
-  z-index: 1;
-}
+/* .auth-container {
+    position: relative;
+    padding: 20px;
+    width: 75%;
+    margin: 50px 100px;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+  } */
 
 .app-description-container::before {
   content: '';
@@ -307,10 +352,7 @@
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr;
-  /* Stack rows: first the app description, then the forms */
-  display: grid;
-  grid-template-rows: auto 1fr;
-  /* Stack rows: first the app description, then the forms */
+
 }
 
 .auth-background::before {
@@ -325,20 +367,6 @@
   background-size: cover;
   background-position: center;
   opacity: 0.5;
-}
-
-.auth-background {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.auth-background {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-
 }
 
 
@@ -516,4 +544,64 @@
 .success-button {
   color: #5cb85c;
   /* Set success button text color */
+}
+
+/* RESPONSIVE STYLING  */
+
+@media screen and (max-width: 600px) {
+  .app-description-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 10vh;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+  }
+
+  .app-description-container::before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+  }
+
+  .app-description-text {
+    z-index: 2;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    font-family: "Your Gorgeous Font", sans-serif;
+    color: rgba(0, 0, 0, 0.548);
+  }
+
+  .login-container,
+  .register-container {
+    position: relative;
+    flex: 1;
+    max-width: 400px;
+    max-height: 55vh;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    top: 8vh;
+  }
+
+  .museum-img {
+    max-width: 275px;
+  }
+
 }

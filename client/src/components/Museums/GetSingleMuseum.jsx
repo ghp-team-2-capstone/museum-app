@@ -33,54 +33,62 @@ export default function GetSingleMuseum({ token, userId }) {
   }, [params.museumId]);
 
   return (
-    <div className="single-museum-page">
-      {/* MUSEUM DETAILS  */}
-      {error ? (
-        <p>{error}</p>
-      ) : (
-        <div className="single-museum-card museum-item" key={museum.museumId}>
-          <div className="flex items-center justify-center">
-            {token && (
-              <FavoriteMuseum
-                userId={userId}
+    <>
+      <div className="page-header-single-museum">
+        <h1>{museum.museumName}</h1>
+      </div>
+      <div className="single-museum-page">
+        {/* MUSEUM DETAILS  */}
+        {error ? (
+          <p>{error}</p>
+        ) : (
+          <div className="single-museum-card museum-item" key={museum.museumId}>
+            <div className="flex items-center justify-center">
+              {token && (
+                <FavoriteMuseum
+                  userId={userId}
+                  museumId={params.museumId}
+                  token={token}
+                />
+              )}
+            </div>
+            {/* <h3 className="museum-headers-single">{museum.museumName}</h3> */}
+            <div className="single-content">
+              <img
+                src={museum.image}
+                alt={museum.museumName}
+                className="museum-image-single"
+              />
+              <a
+                href={museum.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="museum-link-single"
+              >
+                Learn More
+              </a>
+              <br />
+              <p style={{ textAlign: "justify" }}>{museum.description}</p>
+              <br />
+
+              <SingleReview
                 museumId={params.museumId}
                 token={token}
+                userId={userId}
               />
-            )}
+
+              <button
+                className="museum-buttons"
+                onClick={() => {
+                  navigate(`/map`);
+                }}
+              >
+                Back to Map
+              </button>
+            </div>{" "}
           </div>
-          <h3 className="museum-headers">{museum.museumName}</h3>
-          <p>{museum.description}</p>
-          <img
-            src={museum.image}
-            alt={museum.museumName}
-            className="museum-image"
-          />
-          <a
-            href={museum.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="museum-link"
-          >
-            Learn More
-          </a>
-          <br />
-
-          <SingleReview
-            museumId={params.museumId}
-            token={token}
-            userId={userId}
-          />
-
-          <button
-            className="museum-buttons"
-            onClick={() => {
-              navigate(`/map`);
-            }}
-          >
-            Back to Map
-          </button>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 }
