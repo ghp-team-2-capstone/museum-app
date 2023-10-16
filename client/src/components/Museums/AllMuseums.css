@@ -1,17 +1,28 @@
 /* AllMuseums.css */
 
-.page-header {
+.page-header-all-museums {
   display: flex;
   flex-direction: row-reverse;
   font-size: 3rem;
   color: white;
   background-image: url('../Images/monetpaint.png');
-  padding: 1rem;
+  padding: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.page-header h1 {
-  padding-left: 4rem;
+.page-header-single-museum {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 3rem;
+  color: white;
+  background-image: url('../Images/ophelia.png');
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+}
+
+.page-header-all-museums h1 {
+  padding-right: 4rem;
 }
 
 .all-museums-container {

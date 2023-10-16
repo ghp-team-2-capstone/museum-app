@@ -66,8 +66,10 @@ export default function UserReviews({ userId, token }) {
 
   return (
     <>
-      <div className="journal-entries-container user-reviews-container">
+      <div className="page-header-my-reviews">
         <h1>My Reviews</h1>
+      </div>
+      <div className="journal-entries-container user-reviews-container">
         {reviews.length === 0 ? (
           <p>No reviews available</p>
         ) : (

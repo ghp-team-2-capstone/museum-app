@@ -37,7 +37,7 @@ export default function GetAllMuseums() {
 
   return (
     <div>
-      <div className="page-header">
+      <div className="page-header-all-museums">
         <h1>Browse Museums</h1>
       </div>
       <div className="search-museums-container">
