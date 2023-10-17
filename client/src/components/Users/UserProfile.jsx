@@ -9,7 +9,7 @@ import "./JournalEntries.css";
 import Spinner from "../Loading/Spinner";
 
 export default function JournalEntries({ token, userId }) {
-  const [journalEntries, setJournalEntries] = useState([]);
+  const [journalEntries, setJournalEntries] = useState(null);
   const [error, setError] = useState(null);
   const [editingEntry, setEditingEntry] = useState(null);
   const [newEntry, setNewEntry] = useState({ title: "", body: "" });
@@ -53,7 +53,7 @@ export default function JournalEntries({ token, userId }) {
         customDate || new Date().toISOString()
       );
 
-      setJournalEntries([...journalEntries, createdEntry]);
+      setJournalEntries([...(journalEntries ?? []), createdEntry]);
       setNewEntry({ title: "", body: "" });
       setCustomDate(""); // Clear the custom date
     } catch (error) {
@@ -62,7 +62,7 @@ export default function JournalEntries({ token, userId }) {
   };
 
   const handleEditEntry = (entryId) => {
-    const entryToEdit = journalEntries.find(
+    const entryToEdit = (journalEntries ?? []).find(
       (entry) => entry.entryId === entryId
     );
     setEditingEntry(entryToEdit);
@@ -82,7 +82,7 @@ export default function JournalEntries({ token, userId }) {
       );
 
       setJournalEntries((entries) =>
-        entries.map((entry) =>
+        (entries ?? []).map((entry) =>
           entry.entryId === updatedEntry.entryId ? updatedEntry : entry
         )
       );
@@ -99,7 +99,7 @@ export default function JournalEntries({ token, userId }) {
 
       if (result) {
         setJournalEntries((entries) =>
-          entries.filter((entry) => entry.entryId !== entryId)
+          (entries ?? []).filter((entry) => entry.entryId !== entryId)
         );
       } else {
         setError("Failed to delete journal entry. Please try again later.");
@@ -110,7 +110,7 @@ export default function JournalEntries({ token, userId }) {
   };
 
   // Filter entries based on the search query
-  const filteredEntries = journalEntries.filter(
+  const filteredEntries = (journalEntries ?? []).filter(
     (entry) =>
       entry.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       entry.body.toLowerCase().includes(searchQuery.toLowerCase())
@@ -121,7 +121,7 @@ export default function JournalEntries({ token, userId }) {
       <div className="page-header-journal">
         <h1>My Journal</h1>
       </div>
-      {filteredEntries.length === 0 ? (
+      {journalEntries === null ? (
         <Spinner />
       ) : (
         <div className="journal-entries-container">
