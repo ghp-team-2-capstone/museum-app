@@ -52,7 +52,7 @@ const museums = [
   },
   {
     museumName: "American Museum of Natural History",
-    image: "https://tinyurl.com/mrsaznbk",
+    image: "https://www.centralpark.com/downloads/10184/download/Museum-of-Natural-History-dinosaur.jpg?cb=eb286dc9eabefb2c8f11329c09a547e9",
     description:
       "The American Museum of Natural History (AMNH) is an iconic institution located in the heart of New York City. Founded in 1869, it stands as one of the largest and most renowned natural history museums in the world, attracting millions of visitors annually. Nestled within Central Park on the Upper West Side of Manhattan, this magnificent museum is not only a testament to human curiosity and scientific exploration but also a cherished cultural treasure.",
     link: "https://www.amnh.org/",
