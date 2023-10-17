@@ -1,5 +1,5 @@
-import React from "react";
 import "../Museums/AllMuseums.css";
+import React from "react";
 // import museumLogo from "../Images/logo.png";
 
 function Spinner() {

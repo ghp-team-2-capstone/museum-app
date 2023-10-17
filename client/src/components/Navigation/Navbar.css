@@ -234,7 +234,7 @@ button:hover span::before, button:hover span::after{
   }
 
   .navbar-container {
-    /* width: 100%; */
+    width: 0;
     position: fixed;
     background: none;
     top: 0;

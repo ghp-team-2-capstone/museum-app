@@ -54,6 +54,14 @@
   padding-right: 4rem;
 }
 
+.journal-entries-container h1 {
+  text-align: center;
+}
+
+.create-entry-form h2 {
+  text-align: center;
+}
+
 .journal-entry-list {
   list-style: none;
   padding: 0;
@@ -611,5 +619,42 @@
   .museum-img {
     max-width: 275px;
   }
+
+  .page-header-journal {
+    font-size: 1.5rem;
+    margin-top: 4rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   }
+   .page-header-favorite-museums {
+    font-size: 1.5rem;
+    margin-top: 4rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   }
+   .page-header-my-reviews {
+    font-size: 1.5rem;
+    margin-top: 4rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   }
+   .page-header-journal h1 {
+    padding-right: 0;
+   }
+   .page-header-favorite-museums h1 {
+    padding-right: 0;
+   }
+   .page-header-my-reviews h1 {
+    padding-right: 0;
+   }
 
 }
