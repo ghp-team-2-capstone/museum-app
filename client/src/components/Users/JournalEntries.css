@@ -617,6 +617,10 @@
     margin-top: 4rem;
     padding: 1rem;
     margin-bottom: 2rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
   }
 
   .page-header-favorite-museums {
@@ -624,6 +628,9 @@
     margin-top: 4rem;
     padding: 1rem;
     margin-bottom: 2rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 
   .page-header-my-reviews {
@@ -631,22 +638,22 @@
     margin-top: 4rem;
     padding: 1rem;
     margin-bottom: 2rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 
   .page-header-journal h1 {
     padding-right: 0;
-    text-align: center;
   }
 
   .page-header-favorite-museums h1 {
     padding-right: 0;
-    text-align: center;
 
   }
 
   .page-header-my-reviews h1 {
     padding-right: 0;
-    text-align: center;
 
   }
 
