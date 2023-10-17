@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { fetchAllReviews, addReview, editReview } from "../../helpers/fetching";
-import EditReview from "./EditReview";
+import { fetchAllReviews } from "../../helpers/fetching";
 
 export default function AllReviews({ token }) {
   const [reviews, setReviews] = useState([]);
   const [error, setError] = useState(null);
-
-  const [selectedReview, setSelectedReview] = useState(null);
 
   // FETCH ALL REVIEWS
   useEffect(() => {
@@ -23,14 +20,6 @@ export default function AllReviews({ token }) {
     renderReviews();
   }, []);
 
-  // const handleEditReview = (review) => {
-  //   setSelectedReview(review);
-  // };
-
-  // const handleCancelEdit = () => {
-  //   setSelectedReview(null);
-  // };
-
   return (
     <>
       <h1> Get All Reviews</h1>
@@ -39,17 +28,8 @@ export default function AllReviews({ token }) {
           <p>Rating: {review.rating}</p>
           <p>{review.body}</p>
           <p>{review.date}</p>
-          {/* <button onClick={() => handleEditReview(review)}>Edit Review</button> */}
         </div>
       ))}
-
-      {/* {selectedReview && (
-        <EditReview
-          reviewId={selectedReview.reviewId}
-          onCancel={handleCancelEdit}
-          token={token}
-        />
-      )} */}
     </>
   );
 }
